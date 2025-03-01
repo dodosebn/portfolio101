@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 import { stackStyProps } from '@/types';
-import Image from 'next/image';
-const StackSty = ({stackName}: stackStyProps) => {
+
+const StackSty = ({ stackName: IconComponent }: stackStyProps) => {
   return (
     <div>
-        <Image src={stackName} alt="yoh" className='w-[15em] lg:w-[5rem] h-[2rem] lg:h-[5rem] object-cover'/>
+      <IconComponent color='red' />
     </div>
-  )
-}
+  );
+};
 
 export default StackSty;

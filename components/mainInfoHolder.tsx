@@ -3,7 +3,8 @@ import ImButton from './customs/imButton';
 import { FaXTwitter } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-import Projects from '@/app/Projects/page';
+// import Projects frrom '@/app/Projects/page';
+import ProjectsHolder from './projectsHolder';
 const MainInfoHolder = () => {
   return (
     <div className='text-center pt-[4.5rem] px-[1rem]'>
@@ -25,7 +26,7 @@ const MainInfoHolder = () => {
         </div>
        </section>
        <section>
-<Projects />
+<ProjectsHolder />
        </section>
     </div>
   )

@@ -2,6 +2,7 @@ import CountrySwitchImg from '../../public/imgs/country-switch.png';
 import carHubImg from '../../public/imgs/carHub.png';
 import cgpaCalc from '../../public/imgs/cgpa.png';
 import commentImg from '../../public/imgs/commentator.png'
+import urlShortnImg from '../../public/imgs/urlshorter.png';
 
 const pjMaps = [
     {
@@ -46,7 +47,7 @@ const pjMaps = [
     liveUrl: 'https://url-shortening-cyan-ten.vercel.app/',
     pjTitle: 'url_Brander',
     pjBio: 'Next js frontend, using Clean URI API and tailwind, practiced server side rendering in next js',
-    pjPics: CountrySwitchImg,
+    pjPics: urlShortnImg,
     pjStacks: ['next js', 'typeScript', 'tailwind', 'Clean URI API']
 },
 ]

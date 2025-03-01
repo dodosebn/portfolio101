@@ -1,19 +1,22 @@
+// StackHolderProfile.jsx
 import React from 'react';
 import Image from 'next/image';
 import profilePics from '../public/imgs/ebn1 (2).jpg';
 import StackAnima from './customs/stackAnima';
+import bgImg from '@/public/imgs/bg-2.avif';
+
 const StackHolderProfile = () => {
   return (
     <div
       style={{
         position: 'relative',
-        backgroundImage: "url('/imgs/bg-2.avif')",
+        backgroundImage: `url(${bgImg.src})`,
         backgroundSize: 'cover',
         padding: '2rem',
         objectFit: 'cover',
       }}
     >
-      <div> {/* for stacks rotations */}
+      <div>
         <StackAnima />
         <div className="mx-auto flex justify-center relative top-[6rem]">
           <Image

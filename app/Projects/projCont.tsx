@@ -1,26 +1,32 @@
 import React from 'react';
 import { pjProps } from '@/types';
 import Image from 'next/image';
+import { AiOutlineGithub } from "react-icons/ai";
+import { IoIosLink } from "react-icons/io";
 
 const PjCont: React.FC<pjProps> = ({ pjTitle, pjBio, pjStacks, pjPics, liveUrl, repoUrl }) => {
   return (
     <div className="p-6 lg:px-16 bg-[#ffffff]">
-      <main>
-        <div>
+      <main className='flex justify-center flex-col lg:flex-row gap-[2rem]' >
+        <section>
           <Image src={pjPics} alt={pjTitle} width={500} height={300} className='object-cover' />
-        </div>
-        <h1>{pjTitle}</h1>
-        <p>{pjBio}</p>
+        </section>
+        <section className='text-sm text-start'>
+        <h1 className='text-[#09090b] text-[1rem] font-bold pt-2'>{pjTitle}</h1>
+        <p className='pt-1'>{pjBio}</p>
+        <div className='pt-2'>
         <h3>Tech stack</h3>
-        <ul>
+        <ul className='flex flex-row flex-wrap gap-[0.5rem] pt-2'>
           {pjStacks.map((stack: string, index: number) => (
-            <li key={index}>{stack}</li>
+            <li key={index} className='rounded-3xl bg-[#1f2937] text-white px-[0.5rem] py-[0.3rem] '>{stack}</li>
           ))}
         </ul>
-        <div className='flex gap-[2rem]'>
-          <button><a href={repoUrl}>Github</a></button>
-          <button><a href={liveUrl}>Live</a></button>
         </div>
+        <div className='flex gap-[1rem] pt-4'>
+          <button className='bg-[#e5e7eb] text-[#09090b] px-2 py-[0.3rem] rounded-md flex gap-[0.5rem]'><span className='pt-[0.15rem]'><AiOutlineGithub/></span><a href={repoUrl}>Github</a></button>
+          <button className='bg-[#42674f] text-[#e6e6e6] px-2 py-[0.3rem] rounded-md flex gap-[0.5rem]'><span className='pt-[0.15rem]'><IoIosLink /></span> <a href={liveUrl}>Live</a></button>
+        </div>
+        </section>
       </main>
     </div>
   );

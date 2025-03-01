@@ -1,8 +1,8 @@
 import { StaticImageData } from "next/image";
 
 export interface stackStyProps {
-    stackName: string;
-  }
+  stackName: React.ComponentType 
+ }
   
   export interface pjProps {
     pjTitle: string;
