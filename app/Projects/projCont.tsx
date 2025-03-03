@@ -6,19 +6,19 @@ import { IoIosLink } from "react-icons/io";
 
 const PjCont: React.FC<pjProps> = ({ pjTitle, pjBio, pjStacks, pjPics, liveUrl, repoUrl }) => {
   return (
-    <div className="p-6 lg:px-16 bg-[#ffffff]">
-      <main className='flex justify-center flex-col lg:flex-row gap-[2rem]' >
+    <div className="p-2 lg:px-6 bg-[#ffffff]">
+      <main className='flex justify-center flex-col  gap-[2rem]' >
         <section>
           <Image src={pjPics} alt={pjTitle} width={500} height={300} className='object-cover' />
         </section>
-        <section className='text-sm text-start'>
-        <h1 className='text-[#09090b] text-[1rem] font-bold pt-2'>{pjTitle}</h1>
-        <p className='pt-1'>{pjBio}</p>
+        <section className='lg:text-start text-center'>
+        <h1 className='text-[#09090b]  font-bold pt-2'>{pjTitle}</h1>
+        <p className='pt-1 text-[1rem] lg:text-[18px]'>{pjBio}</p>
         <div className='pt-2'>
-        <h3>Tech stack</h3>
+        <h3 className='font-bold'>Tech stack</h3>
         <ul className='flex flex-row flex-wrap gap-[0.5rem] pt-2'>
           {pjStacks.map((stack: string, index: number) => (
-            <li key={index} className='rounded-3xl bg-[#1f2937] text-white px-[0.5rem] py-[0.3rem] '>{stack}</li>
+            <li key={index} className='rounded-xl text-[1rem] bg-[#1f2937] text-white px-[0.5rem] py-[0.5rem] '>{stack}</li>
           ))}
         </ul>
         </div>

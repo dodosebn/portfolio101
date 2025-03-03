@@ -19,9 +19,9 @@ const ProjectsHolder = () => {
   };
 
   return (
-    <div className="lg:px-16 bg-[#ffffff]">
+    <div className=" bg-[#ffffff]">
       <h1>Here is a selection of side projects I enjoyed building.</h1>
-      <div className="flex items-center justify-between relative bg-white rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.1),0_-1px_3px_rgba(0,0,0,0.1),1px_0_3px_rgba(0,0,0,0.1),-1px_0_3px_rgba(0,0,0,0.1)]">
+      <div className="flex items-center justify-between relative bg-white p-2 rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.1),0_-1px_3px_rgba(0,0,0,0.1),1px_0_3px_rgba(0,0,0,0.1),-1px_0_3px_rgba(0,0,0,0.1)]">
         <div className='pr-2 bg-[#09090b] text-white rounded-full p-2'>
         <FaChevronLeft size={20} onClick={prevSlide} />
         </div>
