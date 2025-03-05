@@ -13,22 +13,22 @@ import StackSty from './stackSty';
 
 const StackAnima = () => {
   const icons = [
-    FaHtml5,
-    IoLogoCss3,
-    FaJs,
-    BiLogoTypescript,
-    FaSass,
-    RiTailwindCssFill,
-    FaReact,
-    SiNextdotjs,
-    FaGithub,
+    { component: FaHtml5, name: 'HTML5' },
+    { component: IoLogoCss3, name: 'CSS3' },
+    { component: FaJs, name: 'JavaScript' },
+    { component: BiLogoTypescript, name: 'TypeScript' },
+    { component: FaSass, name: 'Sass' },
+    { component: RiTailwindCssFill, name: 'TailwindCSS' },
+    { component: FaReact, name: 'React' },
+    { component: SiNextdotjs, name: 'Next.js' },
+    { component: FaGithub, name: 'GitHub' },
   ];
 
   return (
     <div className='absolute z-10 flex flex-wrap gap-[2rem] text-red-500'>
-      {icons.map((IconComponent, index) => (
-        <div className='text-3xl lg:text-4xl'>
-        <StackSty stackName={IconComponent} key={index} />
+      {icons.map(({ component: Icon, name }) => (
+        <div className='text-3xl lg:text-4xl' key={name}>
+          <StackSty stackName={Icon} />
         </div>
       ))}
     </div>
