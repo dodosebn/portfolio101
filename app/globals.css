@@ -21,23 +21,20 @@ body {
   background: var(--background);
   font-size: 18px;
   font-family: 'Public Sans', sans-serif;
+  transition-property: opacity, background, transform, filter;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
 }
+
 .page-transition {
-  transition: opacity 0.3s ease;
-}
-
-.page-enter {
   opacity: 0;
+  background: black;
+  transform: translateY(40px);
+  filter: blur(12px);
 }
 
-.page-enter-active {
-  opacity: 1;
-}
-
-.page-exit {
-  opacity: 1;
-}
-
-.page-exit-active {
-  opacity: 0;
+@layer components {
+  .shadow-custom {
+    @apply shadow-[0_1px_3px_rgba(0,0,0,0.1),0_-1px_3px_rgba(0,0,0,0.1),1px_0_3px_rgba(0,0,0,0.1),-1px_0_3px_rgba(0,0,0,0.1)];
+  }
 }

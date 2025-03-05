@@ -6,7 +6,7 @@ import { IoIosLink } from "react-icons/io";
 
 const PjCont: React.FC<pjProps> = ({ pjTitle, pjBio, pjStacks, pjPics, liveUrl, repoUrl }) => {
   return (
-    <div className="p-2 lg:px-6 bg-[#ffffff]">
+    <div className="p-2 lg:px-6">
       <main className='flex justify-center flex-col  gap-[2rem]' >
         <section>
           <Image src={pjPics} alt={pjTitle} width={500} height={300} className='object-cover' />

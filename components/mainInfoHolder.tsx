@@ -20,8 +20,8 @@ const MainInfoHolder = () => {
         <ImButton name='View my Resume' icon={FaBookReader}/>
        </section>
        <section>
-        <h3 className='text-red-950 text-xl'>Reach out to to me via any of the below!</h3>
-        <div className='flex gap-[1rem] justify-center pt-[0.4rem]'>
+        <h3 className='text-red-950 text-lg'>Reach out to to me via any of the below!</h3>
+        <div className='flex gap-[1rem] justify-center pt-[0.4rem] lg:justify-start'>
         <FaXTwitter size={32}/>
         <FaGithub size={32}/>
         <FaLinkedin size={32}/>
