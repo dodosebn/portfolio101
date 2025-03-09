@@ -1,4 +1,3 @@
-// StackAnima.jsx
 import React from 'react';
 import { BiLogoTypescript } from "react-icons/bi";
 import { FaSass } from "react-icons/fa";
@@ -9,9 +8,13 @@ import { FaGithub } from "react-icons/fa";
 import { FaJs } from "react-icons/fa";
 import { IoLogoCss3 } from "react-icons/io";
 import { FaHtml5 } from "react-icons/fa";
-import StackSty from '../utils/stackSty';
+import StackSty from '@/components/utils/stackSty';
 
-const StackAnima = () => {
+interface StackAnimaProps {
+  className: string;
+}
+
+const AboutAnima: React.FC<StackAnimaProps> = ({ className }) => {
   const icons = [
     { component: FaHtml5, name: 'HTML5' },
     { component: IoLogoCss3, name: 'CSS3' },
@@ -25,7 +28,7 @@ const StackAnima = () => {
   ];
 
   return (
-    <div className='absolute z-10 flex flex-wrap gap-[2rem] text-red-500'>
+    <div className={className}>
       {icons.map(({ component: Icon, name }) => (
         <div className='text-3xl lg:text-4xl' key={name}>
           <StackSty stackName={Icon} />
@@ -35,4 +38,4 @@ const StackAnima = () => {
   );
 };
 
-export default StackAnima;
+export default AboutAnima;
