@@ -2,14 +2,14 @@ import React from 'react'
 import { FaXTwitter } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa6";
+import { IoMailOutline } from "react-icons/io5";
 import StackSty from '../utils/stackSty';
 const ContactIcons = () => {
     const Icons = [
   { name: FaXTwitter,    id: 1},
   {name:FaGithub, id:2},
   {name:FaLinkedin, id:3},
-  {name:FaWhatsapp, id:4},
+  {name:IoMailOutline,  id:4},
     ];
 
   return (

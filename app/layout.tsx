@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navigations } from "@/components";
+import FooterReachOut from "@/components/footerReachOut";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -30,6 +31,8 @@ export default function RootLayout({
       >
         <div className="p-6 lg:px-16 bg-[#ffffff]"><Navigations /></div>
         {children}
+        <div className="p-6 lg:px-16 bg-[#ffffff]"> <FooterReachOut /></div>
+
       </body>
     </html>
   );

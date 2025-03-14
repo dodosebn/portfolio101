@@ -37,4 +37,19 @@ body {
   .shadow-custom {
     @apply shadow-[0_1px_3px_rgba(0,0,0,0.1),0_-1px_3px_rgba(0,0,0,0.1),1px_0_3px_rgba(0,0,0,0.1),-1px_0_3px_rgba(0,0,0,0.1)];
   }
+  
+  .text-gradient-animated {
+    background: linear-gradient(270deg, #3498db, #9b59b6, #e91e63);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-x 15s ease infinite;
+  }
+
+  @keyframes gradient-x {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
 }

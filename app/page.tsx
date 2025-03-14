@@ -6,9 +6,7 @@ export default function Home() {
       <div className="lg:flex">
       <StackHolderProfile />
       <div className="flex-1 lg:relative bottom-[4.2rem] left-[2rem]">
-        {/* <div className="absolute "> */}
       <MainInfoHolder />
-      {/* </div> */}
       </div>
       </div>
     </div>
