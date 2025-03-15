@@ -15,7 +15,7 @@ const ContactIcons = () => {
   return (
     <div className='flex gap-[1rem]'>
             {Icons.map(({ name: Icon, id }) => (
-        <div className='text-3xl lg:text-4xl border-2 border-[#1a1313] p-3 rounded-md' key={id}>
+        <div className='text-3xl lg:text-4xl border-2 border-[#1a1313] dark:border-[#d9d9d9] p-3 rounded-md' key={id}>
           <StackSty stackName={Icon} />
         </div>
       ))}

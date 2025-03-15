@@ -3,7 +3,7 @@ import ContactMe from './contactMe';
 
 const page = () => {
   return (
-    <div className="py-1 p-4 lg:px-16 bg-[#ffffff] ">
+    <div className="py-1 p-4 lg:px-16">
      <ContactMe />
     </div>
   )

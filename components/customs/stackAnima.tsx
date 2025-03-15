@@ -25,7 +25,7 @@ const StackAnima = () => {
   ];
 
   return (
-    <div className='absolute z-10 flex flex-wrap gap-[2rem] text-red-500'>
+    <div className='absolute z-10 flex flex-wrap gap-[2rem] text-red-500 dark:text-purple-400'>
       {icons.map(({ component: Icon, name }) => (
         <div className='text-3xl lg:text-4xl' key={name}>
           <StackSty stackName={Icon} />

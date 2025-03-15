@@ -1,31 +1,37 @@
 'use client';
 import React from 'react';
-import { IoMoonOutline } from "react-icons/io5";
 import TransitionLink from './utils/transitionLink';
-
+import { useTheme } from './themeProvider'; 
+import { IoMoonOutline } from "react-icons/io5";
+import { MdOutlineWbSunny } from "react-icons/md";
 
 const Navigations = () => {
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <>
-      <nav className='flex justify-between'>
-        <ul className='flex gap-6 bg-[#fafafa] p-3 rounded-sm'>
+      <nav className='flex justify-between '>
+        <ul className='flex gap-6 bg-[#e5e7eb] dark:bg-[#1f2937] dark:text-[#fafafa] p-3 rounded-sm shadow-sm'>
           <li>
-            <TransitionLink   href="/">Home</TransitionLink >
+            <TransitionLink href="/">Home</TransitionLink>
           </li>
           <li>
-            <TransitionLink  href="/About">About Me</TransitionLink >
+            <TransitionLink href="/About">About Me</TransitionLink>
           </li>
           <li>
-            <TransitionLink  href="/Projects">Projects</TransitionLink >
+            <TransitionLink href="/Projects">Projects</TransitionLink>
           </li>
         </ul>
-        <div className='bg-[#fafafa] p-3 rounded-sm'>
-          <IoMoonOutline size={24} />
+        <div className='bg-[#e5e7eb] dark:bg-[#1f2937] dark:text-[#fafafa] p-3 rounded-sm shadow-sm'>
+          <button onClick={toggleTheme}>
+            {theme === 'light' ? (
+                            <IoMoonOutline size={24} />
+            ) : (
+              <MdOutlineWbSunny size={24} />
+            )}
+          </button>
         </div>
       </nav>
-
-     
     </>
   );
 };

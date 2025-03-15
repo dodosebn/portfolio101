@@ -7,7 +7,7 @@ const Projects = () => {
     <main className="grid grid-cols-1 md:grid-cols-2 gap-6">
     {pjMaps.length > 0 ? (
       pjMaps.map((pj) =>
-        <div className='bg-[#fafafa] shadow-custom py-4' key={pj.id}>
+        <div className='shadow-custom py-4 dark:border-[1.2px] border-[#fafafa]' key={pj.id}>
          <PjCont  {...pj} />
          </div>
     )
