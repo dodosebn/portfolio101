@@ -11,14 +11,14 @@ const Navigations = () => {
   return (
     <>
       <nav className='flex justify-between '>
-        <ul className='flex gap-6 bg-[#e5e7eb] dark:bg-[#1f2937] dark:text-[#fafafa] p-3 rounded-sm shadow-sm'>
-          <li>
+        <ul className='flex gap-6 bg-[#e5e7eb]  dark:bg-[#1f2937] dark:text-[#fafafa] p-3 rounded-sm shadow-sm'>
+          <li className='text-[#565f6e] hover:text-black'>
             <TransitionLink href="/">Home</TransitionLink>
           </li>
-          <li>
+          <li className='text-[#565f6e] hover:text-black'>
             <TransitionLink href="/About">About Me</TransitionLink>
           </li>
-          <li>
+          <li className='text-[#565f6e] hover:text-black'>
             <TransitionLink href="/Projects">Projects</TransitionLink>
           </li>
         </ul>

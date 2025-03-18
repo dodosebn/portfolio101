@@ -19,12 +19,12 @@ const AboutCont = () => {
         <AboutMeMain />
       </main>
     </div>
-    <div className='pt-3 border-b-[1.2px] border-b-black dark:border-gray-400 pb-2'>
+    <div className='pt-3  border-b-[1px]  dark:border-gray-400 pb-2'>
       <h1 className='text-2xl pt-2'>Skills </h1>
     <SkillStyled />
    </div>
-   <div className='pt-3 border-b-[1.2px] border-b-black dark:border-gray-400 pb-2'>
-   <Expri />
+   <div>
+    <Expri />
    </div>
     </div>
   )
