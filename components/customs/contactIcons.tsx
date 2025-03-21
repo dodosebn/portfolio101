@@ -3,13 +3,10 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { IoMailOutline } from "react-icons/io5";
-import { TbMessages } from "react-icons/tb";
 import StackSty from '../utils/stackSty';
 
-// this is the part to Hire Page: import '../../app/HireMe'
 const ContactIcons = () => {
     const Icons = [
-        { name: TbMessages, link: '../../app/HireMe/page', id: 5 },
         { name: FaXTwitter, link: 'https://www.linkedin.com/in/orji-dominion-ebubennia-2260542ba/', id: 1 },
         { name: FaGithub, link: 'https://github.com/dodosebn', id: 2 },
         { name: FaLinkedin, link: 'https://www.linkedin.com/in/orji-dominion-ebubennia-2260542ba/', id: 3 },

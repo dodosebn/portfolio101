@@ -16,7 +16,7 @@ const Navigations = () => {
   return (
     <>
       <nav className='flex justify-between '>
-        <ul className='flex gap-4 lg:gap-6 bg-[#e5e7eb]  dark:bg-[#1f2937] dark:text-[#fafafa] p-3 rounded-sm shadow-sm'>
+        <ul className='flex gap-3 lg:gap-6 bg-[#e5e7eb]  dark:bg-[#1f2937] dark:text-[#fafafa] p-3 rounded-sm shadow-sm'>
           <li 
             className={`text-[#565f6e] dark:hover:text-white hover:text-black ${activeLink === 'home' ?  'dark:text-white  text-black' : ''}`}
             onClick={() => handleClick('home')}

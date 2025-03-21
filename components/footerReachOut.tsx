@@ -9,9 +9,9 @@ const FooterReachOut = () => {
   return (
     <div className='flex justify-between border-t-[1.3px] border-gray-400 my-4 pt-2'>
    <div className='flex gap-2'>
-    <span className='pt-1'><FaCreativeCommons /></span> <p>2025 Learning_Dodo's</p>
+    <span className='pt-1'><FaCreativeCommons /></span> <p>25 Learning_Dodo's</p>
    </div>
-   <div>
+   <div className='pt-1'>
     <ul className='flex gap-2'>
         <li><IoMailOutline /></li>
         <li><FaLinkedin /></li>
