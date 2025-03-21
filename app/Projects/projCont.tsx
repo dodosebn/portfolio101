@@ -9,7 +9,7 @@ const PjCont: React.FC<pjProps> = ({ pjTitle, pjBio, pjStacks, pjPics, liveUrl, 
     <div className="p-2 lg:px-6">
       <main className='flex justify-center flex-col  gap-[2rem]' >
         <section>
-          <Image src={pjPics} alt={pjTitle} width={500} height={300} className='object-cover' />
+          <Image src={pjPics} alt={pjTitle}  height={300} className='object-cover w-full' />
         </section>
         <section className='lg:text-start text-center'>
         <h1 className='text-[#09090b]  font-bold pt-2 dark:text-[#fafafa]'>{pjTitle}</h1>

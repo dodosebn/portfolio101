@@ -28,7 +28,7 @@ const ProjectsHolder = () => {
           <FaChevronLeft size={20} onClick={prevSlide} />
         </div>
 
-        <div className="relative w-full">
+        <div className="relative w-full flex justify-center items-center">
           <PjCont
             key={pjMaps[slideIndex].id}
             pjTitle={pjMaps[slideIndex].pjTitle}
