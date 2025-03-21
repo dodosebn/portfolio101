@@ -13,10 +13,10 @@ const FooterReachOut = () => {
    </div>
    <div className='pt-1'>
     <ul className='flex gap-2'>
-        <li><IoMailOutline /></li>
-        <li><FaLinkedin /></li>
-        <li><FaGithub /></li>
-        <li><FaXTwitter /></li>
+        <li><a href="mailto:orjidominion32@gmail.com"><IoMailOutline /></a></li>
+        <li><a href='https://www.linkedin.com/in/orji-dominion-ebubennia-2260542ba/'><FaLinkedin /></a></li>
+        <li><a href='https://github.com/dodosebn'><FaGithub /></a></li>
+        <li><a href='https://www.linkedin.com/in/orji-dominion-ebubennia-2260542ba/'></a><FaXTwitter /></li>
     </ul>
    </div>
     </div>
