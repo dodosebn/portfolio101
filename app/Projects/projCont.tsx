@@ -12,7 +12,7 @@ const PjCont: React.FC<pjProps> = ({ pjTitle, pjBio, pjStacks, pjPics, liveUrl, 
           <Image src={pjPics} alt={pjTitle} width={500} height={300} className='object-cover' />
         </section>
         <section className='lg:text-start text-center'>
-        <h1 className='text-[#09090b]  font-bold pt-2'>{pjTitle}</h1>
+        <h1 className='text-[#09090b]  font-bold pt-2 dark:text-[#fafafa]'>{pjTitle}</h1>
         <p className='pt-1 text-[1rem] lg:text-[18px]'>{pjBio}</p>
         <div className='pt-2'>
         <h3 className='font-bold'>Tech stack</h3>
