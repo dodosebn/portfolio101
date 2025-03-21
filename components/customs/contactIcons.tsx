@@ -1,26 +1,32 @@
-import React from 'react'
+import React from 'react';
 import { FaXTwitter } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { IoMailOutline } from "react-icons/io5";
+import { TbMessages } from "react-icons/tb";
 import StackSty from '../utils/stackSty';
+
+// this is the part to Hire Page: import '../../app/HireMe'
 const ContactIcons = () => {
     const Icons = [
-  { name: FaXTwitter,    id: 1},
-  {name:FaGithub, id:2},
-  {name:FaLinkedin, id:3},
-  {name:IoMailOutline,  id:4},
+        { name: TbMessages, link: '../../app/HireMe/page', id: 5 },
+        { name: FaXTwitter, link: 'https://www.linkedin.com/in/orji-dominion-ebubennia-2260542ba/', id: 1 },
+        { name: FaGithub, link: 'https://github.com/dodosebn', id: 2 },
+        { name: FaLinkedin, link: 'https://www.linkedin.com/in/orji-dominion-ebubennia-2260542ba/', id: 3 },
+        { name: IoMailOutline, link: 'mailto:orjidominion32@gmail.com', id: 4 },
     ];
 
-  return (
-    <div className='flex gap-[1rem]'>
-            {Icons.map(({ name: Icon, id }) => (
-        <div className='text-3xl lg:text-4xl border-2 border-[#1a1313] dark:border-[#d9d9d9] p-3 rounded-md' key={id}>
-          <StackSty stackName={Icon} />
+    return (
+        <div className='flex gap-[1rem]'>
+            {Icons.map(({ name: Icon, id, link }) => (
+                <div className='text-3xl lg:text-4xl border-2 border-[#1a1313] dark:border-[#d9d9d9] p-3 rounded-md' key={id}>
+                    <a href={link} target="_blank" rel="noopener noreferrer">
+                        <StackSty stackName={Icon} />
+                    </a>
+                </div>
+            ))}
         </div>
-      ))}
-        </div>
-  )
-}
+    );
+};
 
 export default ContactIcons;

@@ -14,9 +14,9 @@ const StackHolderProfile = () => {
         padding: '2rem',
         objectFit: 'cover',
       }}
-      className='lg:w-[48%] lg:p-[5rem] lg:flex justify-center relative' // Added relative positioning
+      className='lg:w-[48%] lg:p-[5rem] lg:flex justify-center relative' 
     >
-      <div className="relative">  {/* This container will hold the StackAnima component */}
+      <div className="relative"> 
         <StackAnima />
         <div className="mx-auto flex justify-center relative top-[6rem] ">
           <Image

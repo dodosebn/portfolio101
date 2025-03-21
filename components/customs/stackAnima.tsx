@@ -52,16 +52,9 @@ const StackAnima = () => {
   return (
     <div
       ref={observerTarget}
-      className={`absolute z-10 flex flex-wrap gap-[2rem] text-red-500 dark:text-purple-400 ${
+      className={`stack-container lg:lg-animation absolute z-10 flex flex-wrap gap-[2rem] text-red-500 dark:text-purple-400 ${
         inView ? 'orbit' : ''
       }`}
-      style={{
-        position: 'absolute',
-        top: '-10rem',
-        left: '-10rem',
-        width: '100%',
-        height: '100%',
-      }}
     >
       {icons.map(({ component: Icon, name }) => (
         <div className='text-3xl lg:text-4xl' key={name}>
