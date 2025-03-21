@@ -9,7 +9,7 @@ const Navigations = () => {
   const { theme, toggleTheme } = useTheme();
   const [activeLink, setActiveLink] = useState(null);
 
-  const handleClick = (link) => {
+  const handleClick = (link:any) => {
     setActiveLink(link);
   };
 
