@@ -88,7 +88,6 @@ const FormItself = () => {
             onChange={handleChange}
             required
           />
-          {/* {formErrors.email && <p className="text-red-500 text-sm">{formErrors.email}</p>} */}
         </div>
 
         <div className="flex flex-col">
@@ -101,11 +100,10 @@ const FormItself = () => {
             onChange={handleChange}
             required
           ></textarea>
-          {/* {formErrors.message && <p className="text-red-500 text-sm">{formErrors.message}</p>} */}
         </div>
 
         <div className="pt-2 flex items-start">
-          <button type="submit" className="bg-[#09090b] dark:bg-[#1f2937] px-4 py-2 rounded-lg text-[#fafafa]">
+          <button type="submit" className="bg-[#09090b] dark:bg-[#1f2937] button px-4 py-2 rounded-lg text-[#fafafa]">
             {loading ? (
               <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-white"></div>
             ) : (

@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -20,11 +19,12 @@ body {
   color: hsl(233, 26%, 24%);
   background: var(--background);
   font-size: 18px;
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   transition-property: opacity, background, transform, filter;
   transition-timing-function: ease-in-out;
   transition-duration: 500ms;
 }
+
 
 .page-transition {
   opacity: 0;
@@ -34,6 +34,53 @@ body {
 }
 
 @layer components {
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .dark-gradient {
+    background: linear-gradient(135deg, #09090b, #1a1a1a, #2d2d2d);
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease infinite;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+  }
+  .navbar {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+  }
+  .navbar li a.active {
+    border-bottom: 2px solid #3498db; 
+  }
+  .navbar li a:hover {
+    color: #3498db; 
+    transition: color 0.3s ease;
+  }
+  .button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+
+.footer{
+  font-family: 'Open Sans', sans-serif; 
+    font-size: 14px; 
+    font-weight: 300; 
+}
+@media (prefers-color-scheme: dark) {
+  .footer {
+    color: #a0a0a0;
+  }
+}
+.footer a:hover {
+  color: #3498db; 
+  transition: color 0.3s ease;
+}
   .shadow-custom {
     @apply shadow-[0_1px_3px_rgba(0,0,0,0.1),0_-1px_3px_rgba(0,0,0,0.1),1px_0_3px_rgba(0,0,0,0.1),-1px_0_3px_rgba(0,0,0,0.1)];
   }

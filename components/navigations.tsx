@@ -16,21 +16,21 @@ const Navigations = () => {
   return (
     <>
       <nav className='flex justify-between '>
-        <ul className='flex gap-3 lg:gap-6 bg-[#e5e7eb]  dark:bg-[#1f2937] dark:text-[#fafafa] p-3 rounded-sm shadow-sm'>
+        <ul className='flex gap-3 lg:gap-6 navbar bg-[#e5e7eb]  dark:bg-[#1f2937] dark:text-[#fafafa] p-3 rounded-sm shadow-sm'>
           <li 
-            className={`text-[#565f6e] dark:hover:text-white hover:text-black ${activeLink === 'home' ?  'dark:text-white  text-black' : ''}`}
+            className={`text-[#565f6e]   ${activeLink === 'home' ?  'dark:text-white  text-black' : ''}`}
             onClick={() => handleClick('home')}
           >
             <TransitionLink href="/">Home</TransitionLink>
           </li>
           <li 
-            className={`text-[#565f6e] hover:text-black ${activeLink === 'about' ? 'text-black dark:text-white ' : ''}`}
+            className={`text-[#565f6e]  ${activeLink === 'about' ? 'text-black dark:text-white' : ''}`}
             onClick={() => handleClick('about')}
           >
             <TransitionLink href="/About">About Me</TransitionLink>
           </li>
           <li 
-            className={`text-[#565f6e] hover:text-black ${activeLink === 'projects' ? 'text-black dark:text-white ' : ''}`}
+            className={`text-[#565f6e]  ${activeLink === 'projects' ? 'text-black dark:text-white ' : ''}`}
             onClick={() => handleClick('projects')}
           >
             <TransitionLink href="/Projects">Projects</TransitionLink>

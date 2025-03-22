@@ -7,7 +7,7 @@ import { FaCreativeCommons } from "react-icons/fa6";
 
 const FooterReachOut = () => {
   return (
-    <div className='flex justify-between border-t-[1.3px] border-gray-400 my-4 pt-2'>
+    <div className='flex footer justify-between border-t-[1.3px] border-gray-400 my-4 pt-2'>
    <div className='flex gap-2'>
     <span className='pt-1'><FaCreativeCommons /></span> <p>25 Learning_Dodo's</p>
    </div>
