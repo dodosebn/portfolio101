@@ -2,14 +2,13 @@ import React from 'react';
 import { eduFormal, eduSelf, experienceDetails } from './customs/expriItms';
 
 const Expri: React.FC = () => {
-  // Sort the arrays by date (most recent first)
   const sortedExperience = [...experienceDetails].sort((a, b) => b.date.localeCompare(a.date));
   const sortedEduFormal = [...eduFormal].sort((a, b) => b.date.localeCompare(a.date));
   const sortedEduSelf = [...eduSelf].sort((a, b) => b.date.localeCompare(a.date));
 
   return (
     <div>
-      {/* Experience Section */}
+     
       <h1 className='text-2xl font-[650] mb-4'>Experience</h1>
       <div className='space-y-4'>
         {sortedExperience.map((experience) => (
@@ -23,14 +22,11 @@ const Expri: React.FC = () => {
         ))}
       </div>
 
-      {/* Divider */}
       <div className='pt-3 border-b-[1.2px] border-b-black dark:border-gray-400 pb-2 my-6'></div>
 
-      {/* Education and Training Section */}
       <section className='pt-3'>
         <h1 className='text-2xl font-[650] mb-4'>Education and Training</h1>
 
-        {/* Formal Education */}
         <div className='space-y-4'>
           {sortedEduFormal.map((edu) => (
             <div key={edu.id} className='space-y-1'>
@@ -40,7 +36,6 @@ const Expri: React.FC = () => {
           ))}
         </div>
 
-        {/* Self-Taught Education */}
         <div className='space-y-4 pt-4'>
           {sortedEduSelf.map((edu) => (
             <div key={edu.id} className='space-y-1'>
