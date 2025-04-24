@@ -1,15 +1,14 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
-import { BiLogoTypescript } from "react-icons/bi";
-import { FaSass } from "react-icons/fa";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaSass } from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
 import { FaJs } from "react-icons/fa";
 import { IoLogoCss3 } from "react-icons/io";
 import { FaHtml5 } from "react-icons/fa";
 import StackSty from '../utils/stackSty';
+import { useEffect, useRef, useState } from "react";
+import { BiLogoTypescript } from "react-icons/bi";
+import { RiTailwindCssFill } from "react-icons/ri";
 
 const StackAnima = () => {
   const [inView, setInView] = useState(false);

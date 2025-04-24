@@ -1,52 +1,90 @@
-'use client';
-import React, { useState } from 'react';
-import TransitionLink from './utils/transitionLink';
-import { useTheme } from './themeProvider'; 
+"use client";
+import React, { useState } from "react";
+import TransitionLink from "./utils/transitionLink";
+import { useTheme } from "./themeProvider";
 import { IoMoonOutline } from "react-icons/io5";
 import { MdOutlineWbSunny } from "react-icons/md";
+import Logo from "./utils/logo";
+import { BiMenuAltRight, BiX } from "react-icons/bi";
 
 const Navigations = () => {
   const { theme, toggleTheme } = useTheme();
-  const [activeLink, setActiveLink] = useState(null);
+  const [activeLink, setActiveLink] = useState<"home" | "about" | "projects" | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleClick = (link:any) => {
+  const handleClick = (link: "home" | "about" | "projects") => {
     setActiveLink(link);
+    setMobileMenuOpen(false);
   };
 
   return (
-    <>
-      <nav className='flex justify-between '>
-        <ul className='flex gap-3 lg:gap-6 navbar bg-[#e5e7eb]  dark:bg-[#1f2937] dark:text-[#fafafa] p-3 rounded-sm shadow-sm'>
-          <li 
-            className={`text-[#565f6e]   ${activeLink === 'home' ?  'dark:text-white  text-black' : ''}`}
-            onClick={() => handleClick('home')}
+    <nav className="flex justify-between items-center w-full">
+     <div className={mobileMenuOpen ? 'hidden' : 'block'}>
+        <Logo />
+      </div>
+
+      <button 
+        type="button"
+        className="md:hidden p-2"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+      >
+        {mobileMenuOpen ? <BiX size={24} /> : <BiMenuAltRight size={24} />}
+      </button>
+
+      <div className={`${mobileMenuOpen ? 'flex' : 'hidden'} md:flex items-center gap-4`}>
+        <ul className="flex flex-row gap-3 lg:gap-6 navbar dark:border-[#e5e7eb] border-1 border-[#1f2937] dark:text-[#fafafa] p-3 rounded-sm shadow-sm whitespace-nowrap">
+          <li
+            key="home"
+            className={`text-[#565f6e] ${
+              activeLink === "home" ? "dark:text-white text-black" : ""
+            }`}
+            onClick={() => handleClick("home")}
           >
             <TransitionLink href="/">Home</TransitionLink>
           </li>
-          <li 
-            className={`text-[#565f6e]  ${activeLink === 'about' ? 'text-black dark:text-white' : ''}`}
-            onClick={() => handleClick('about')}
+          <li
+            key="about"
+            className={`text-[#565f6e] ${
+              activeLink === "about" ? "text-black dark:text-white" : ""
+            }`}
+            onClick={() => handleClick("about")}
           >
             <TransitionLink href="/About">About Me</TransitionLink>
           </li>
-          <li 
-            className={`text-[#565f6e]  ${activeLink === 'projects' ? 'text-black dark:text-white ' : ''}`}
-            onClick={() => handleClick('projects')}
+          <li
+            key="projects"
+            className={`text-[#565f6e] ${
+              activeLink === "projects" ? "text-black dark:text-white" : ""
+            }`}
+            onClick={() => handleClick("projects")}
           >
             <TransitionLink href="/Projects">Projects</TransitionLink>
           </li>
         </ul>
-        <div className='bg-[#e5e7eb] dark:bg-[#1f2937] dark:text-[#fafafa] p-3 rounded-sm shadow-sm'>
-          <button onClick={toggleTheme}>
-            {theme === 'light' ? (
-              <IoMoonOutline size={24} />
-            ) : (
-              <MdOutlineWbSunny size={24} />
-            )}
-          </button>
-        </div>
-      </nav>
-    </>
+      </div>
+
+      {/* Theme toggle - mobile */}
+      <div className={`${mobileMenuOpen ? 'flex' : 'hidden'} dark:border-[#e5e7eb] border-1 border-[#1f2937] dark:text-[#fafafa] p-3 rounded-sm shadow-sm`}>
+        <button type="button" onClick={toggleTheme}>
+          {theme === "light" ? (
+            <IoMoonOutline size={24} />
+          ) : (
+            <MdOutlineWbSunny size={24} />
+          )}
+        </button>
+      </div>
+
+      {/* Theme toggle - desktop */}
+      <div className="hidden md:flex">
+        <button type="button" onClick={toggleTheme}>
+          {theme === "light" ? (
+            <IoMoonOutline size={24} />
+          ) : (
+            <MdOutlineWbSunny size={24} />
+          )}
+        </button>
+      </div>
+    </nav>
   );
 };
 

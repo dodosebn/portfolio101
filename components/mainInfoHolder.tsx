@@ -11,7 +11,7 @@ const MainInfoHolder = () => {
     <div className='lg:text-start lg:relative lg:items-start text-center pt-[4.5rem]'>
       <section>
       <h1 className='text-red-600 dark:text-[#fafafa] font-bold'>ORJI DOMINION</h1>
-       <h3 className='text-red-950 font-medium  dark:text-gradient-animated'>Your next Frontend Developer</h3>
+       <h3 className='text-red-950 font-bold text-xl  dark:text-gradient-animated'>Your next Frontend Developer</h3>
        <p>I&apos;m a Frontend Developer who loves making website look good and work well. I enjoy writing clean code, solving problems, and continuously learning to enhance my skills.</p>
        </section>
        <section className='p-[1rem] flex justify-center lg:relative right-3 lg:justify-start gap-[0.35rem] md:gap-[1rem] button'>
