@@ -40,7 +40,9 @@ const StackAnima = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        setInView(entry.isIntersecting);
+        if (entry.isIntersecting && !inView) {
+          setInView(true); // Only update if it's not already in view
+        }
       },
       { threshold: 0.5 }
     );
@@ -54,7 +56,7 @@ const StackAnima = () => {
         observer.unobserve(observerTarget.current);
       }
     };
-  }, [isMounted]);
+  }, [isMounted, inView]); // Make sure this runs only when needed
 
   useEffect(() => {
     const checkMobile = () => {
@@ -65,15 +67,14 @@ const StackAnima = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Server-side render fallback
   if (!isMounted) {
     return (
-      <div 
+      <div
         ref={observerTarget}
         className="stack-container absolute z-10 flex flex-wrap gap-[2rem] text-red-500 dark:text-purple-400"
       >
         {icons.map(({ component: Icon, name }) => (
-          <div className='text-3xl lg:text-4xl' key={name}>
+          <div className="text-3xl lg:text-4xl" key={name}>
             <StackSty stackName={Icon} />
           </div>
         ))}
@@ -84,31 +85,38 @@ const StackAnima = () => {
   return (
     <div
       ref={observerTarget}
-      className={`stack-container absolute ${isMobile ? 'top-[11rem]' :'top-[17.5rem]' } z-10 flex gap-[2rem] text-red-500 dark:text-purple-400 ${
+      className={`stack-container absolute ${isMobile ? 'top-[11rem]' : 'top-[17.5rem]'} z-10 flex gap-[2rem] text-red-500 dark:text-purple-400 ${
         inView ? 'orbit' : ''
       }`}
-      style={inView ? { 
-        position: 'relative',
-        animation: 'orbit-animation 10s linear infinite',
-        transformOrigin: 'center center'
-      } : {}}
+      style={
+        inView
+          ? {
+              position: 'relative',
+              animation: 'orbit-animation 10s linear infinite',
+              transformOrigin: 'center center',
+            }
+          : {}
+      }
     >
       {icons.map(({ component: Icon, name }, index) => (
-        <div 
-          className='text-3xl lg:text-4xl '
+        <div
+          className="text-3xl lg:text-4xl"
           key={name}
-          style={inView ? {
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: `translate(-50%, -50%) rotate(${(index * (360 / icons.length))}deg) translateY(${isMobile ? '-100px' : '-200px'}) rotate(${-(index * (360 / icons.length))}deg)`,
-            animationDelay: `${index * 0.2}s`
-          } : {}}
+          style={
+            inView
+              ? {
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: `translate(-50%, -50%) rotate(${(index * (360 / icons.length))}deg) translateY(${isMobile ? '-100px' : '-200px'}) rotate(${-(index * (360 / icons.length))}deg)`,
+                  animationDelay: `${index * 0.2}s`,
+                }
+              : {}
+          }
         >
           <StackSty stackName={Icon} />
         </div>
       ))}
-      
       <style jsx global>{`
         @keyframes orbit-animation {
           0% {
