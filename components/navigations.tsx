@@ -9,10 +9,10 @@ import { BiMenuAltRight, BiX } from "react-icons/bi";
 
 const Navigations = () => {
   const { theme, toggleTheme } = useTheme();
-  const [activeLink, setActiveLink] = useState<"home" | "about" | "projects" | null>(null);
+  const [activeLink, setActiveLink] = useState<"Home" | "about" | "projects" | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleClick = (link: "home" | "about" | "projects") => {
+  const handleClick = (link: "Home" | "about" | "projects") => {
     setActiveLink(link);
     setMobileMenuOpen(false);
   };
@@ -36,11 +36,11 @@ const Navigations = () => {
           <li
             key="home"
             className={`text-[#565f6e] ${
-              activeLink === "home" ? "dark:text-white text-black" : ""
+              activeLink === "Home" ? "dark:text-white text-black" : ""
             }`}
-            onClick={() => handleClick("home")}
+            onClick={() => handleClick("Home")}
           >
-            <TransitionLink href="/">Home</TransitionLink>
+            <TransitionLink href="/Home">Home</TransitionLink>
           </li>
           <li
             key="about"
