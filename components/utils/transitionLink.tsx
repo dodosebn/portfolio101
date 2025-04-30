@@ -23,7 +23,7 @@ await sleep(200);
 body?.classList.remove('page-transition');
     }
   return (
-<Link href={href} {...props} onClick={handleTransition} className='truncate'>{children}</Link>
+<Link href={href} {...props} onClick={handleTransition}>{children}</Link>
   )
 }
 

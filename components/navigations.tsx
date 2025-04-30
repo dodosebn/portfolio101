@@ -63,7 +63,6 @@ const Navigations = () => {
         </ul>
       </div>
 
-      {/* Theme toggle - mobile */}
       <div className={`${mobileMenuOpen ? 'flex' : 'hidden'} dark:border-[#e5e7eb] border-1 border-[#1f2937] dark:text-[#fafafa] p-3 rounded-sm shadow-sm`}>
         <button type="button" onClick={toggleTheme}>
           {theme === "light" ? (
@@ -74,7 +73,6 @@ const Navigations = () => {
         </button>
       </div>
 
-      {/* Theme toggle - desktop */}
       <div className="hidden md:flex">
         <button type="button" onClick={toggleTheme}>
           {theme === "light" ? (
