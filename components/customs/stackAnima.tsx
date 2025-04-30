@@ -41,7 +41,7 @@ const StackAnima = () => {
       (entries) => {
         const entry = entries[0];
         if (entry.isIntersecting && !inView) {
-          setInView(true); // Only update if it's not already in view
+          setInView(true);
         }
       },
       { threshold: 0.5 }
@@ -56,7 +56,7 @@ const StackAnima = () => {
         observer.unobserve(observerTarget.current);
       }
     };
-  }, [isMounted, inView]); // Make sure this runs only when needed
+  }, [isMounted, inView]);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -85,13 +85,10 @@ const StackAnima = () => {
   return (
     <div
       ref={observerTarget}
-      className={`stack-container absolute ${isMobile ? 'top-[11rem]' : 'top-[17.5rem]'} z-10 flex gap-[2rem] text-red-500 dark:text-purple-400 ${
-        inView ? 'orbit' : ''
-      }`}
+      className={`stack-container absolute ${isMobile ? 'top-[11rem]' : 'top-[17.5rem]'} z-10 flex gap-[2rem] text-red-500 dark:text-purple-400 ${inView ? 'orbit' : ''}`}
       style={
         inView
           ? {
-              position: 'relative',
               animation: 'orbit-animation 10s linear infinite',
               transformOrigin: 'center center',
             }
