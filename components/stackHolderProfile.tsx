@@ -22,7 +22,7 @@ const StackHolderProfile = () => {
           <Image
             src={profilePics}
             alt="My Profile"
-            className="rounded-full w-[10rem] h-[10rem] lg:w-[23rem] lg:h-[23rem] border-[3px] border-solid border-[#d3d3d3]"
+            className="rounded-full w-[11rem] h-[11rem] lg:w-[23rem] lg:h-[23rem] border-[3px] border-solid border-[#d3d3d3]"
           />
         </div>
       </div>

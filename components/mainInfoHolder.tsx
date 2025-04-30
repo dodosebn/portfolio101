@@ -16,7 +16,7 @@ const MainInfoHolder = () => {
        </section>
        <section className='p-[1rem] flex justify-center lg:relative right-3 lg:justify-start gap-[0.35rem] md:gap-[1rem] button'>
         <TransitionLink href={'/HireMe'}><ImButton name='Hire Me' icon={TbMessages  } /></TransitionLink > 
-        <ImButton name='View my Resume' icon={FaBookReader}/>
+       <TransitionLink href={'https://docs.google.com/document/d/1irmj_R2CwMLJtFTYmbhl2S19h3urlKTx_blSky1rT0c/edit?usp=sharing'}><ImButton name='View my Resume' icon={FaBookReader}/></TransitionLink>
        </section>
        <section >
         <h3 className='text-red-950 text-lg dark:text-gradient-animated'>Reach out to to me via any of the below!</h3>

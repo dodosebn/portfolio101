@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark">
 <body className="bg-white text-black dark:dark-gradient dark:text-[#d9d9d9]">
 <ThemeProvider>
           <div className="p-6 lg:px-16">

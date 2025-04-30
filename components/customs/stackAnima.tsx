@@ -101,7 +101,7 @@ const StackAnima = () => {
             position: 'absolute',
             top: '50%',
             left: '50%',
-            transform: `translate(-50%, -50%) rotate(${(index * (360 / icons.length))}deg) translateY(${isMobile ? '-90px' : '-200px'}) rotate(${-(index * (360 / icons.length))}deg)`,
+            transform: `translate(-50%, -50%) rotate(${(index * (360 / icons.length))}deg) translateY(${isMobile ? '-100px' : '-200px'}) rotate(${-(index * (360 / icons.length))}deg)`,
             animationDelay: `${index * 0.2}s`
           } : {}}
         >
