@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useState } from "react";
 import TransitionLink from "./utils/transitionLink";
@@ -9,10 +10,10 @@ import { BiMenuAltRight, BiX } from "react-icons/bi";
 
 const Navigations = () => {
   const { theme, toggleTheme } = useTheme();
-  const [activeLink, setActiveLink] = useState<"Home" | "about" | "projects" | null>(null);
+  const [activeLink, setActiveLink] = useState<"/" | "about" | "projects" | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleClick = (link: "Home" | "about" | "projects") => {
+  const handleClick = (link: "/" | "about" | "projects") => {
     setActiveLink(link);
     setMobileMenuOpen(false);
   };
@@ -23,7 +24,7 @@ const Navigations = () => {
         <Logo />
       </div>
 
-      <button 
+      <button
         type="button"
         className="md:hidden p-2"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -36,11 +37,11 @@ const Navigations = () => {
           <li
             key="home"
             className={`text-[#565f6e] ${
-              activeLink === "Home" ? "dark:text-white text-black" : ""
+              activeLink === "/" ? "dark:text-white text-black" : ""
             }`}
-            onClick={() => handleClick("Home")}
+            onClick={() => handleClick("/")}
           >
-            <TransitionLink href="/Home">Home</TransitionLink>
+            <TransitionLink href="/">Home</TransitionLink>
           </li>
           <li
             key="about"
