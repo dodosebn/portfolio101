@@ -1,4 +1,4 @@
-Seems the problem is fro. Here: import React from 'react';
+ import React from 'react';
 import Image from 'next/image';
 import profilePics from '../public/imgs/ebn1 (2).jpg';
 import StackAnima from './customs/stackAnima';
@@ -18,7 +18,7 @@ const StackHolderProfile = () => {
     >
       <div className="relative"> 
         <StackAnima />
-        <div className="mx-auto flex justify-center relative">
+        <div className="mx-auto flex justify-center relative top-[6rem] lg:top-[17.5rem]">
           <Image
             src={profilePics}
             alt="My Profile"
