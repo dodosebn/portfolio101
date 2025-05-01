@@ -1,6 +1,8 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { FaReact, FaSass, FaGithub, FaJs, FaHtml5 } from 'react-icons/fa';
+import {
+  FaReact, FaSass, FaGithub, FaJs, FaHtml5,
+} from 'react-icons/fa';
 import { SiNextdotjs } from 'react-icons/si';
 import { IoLogoCss3 } from 'react-icons/io';
 import { BiLogoTypescript } from 'react-icons/bi';
@@ -15,7 +17,7 @@ const StackAnima = () => {
     FaSass, RiTailwindCssFill, FaReact, SiNextdotjs, FaGithub,
   ];
 
-  const radius = typeof window !== 'undefined' && window.innerWidth < 1024 ? 100 : 200; // Set 100px for mobile, 200px for desktop
+  const radius = typeof window !== 'undefined' && window.innerWidth < 1024 ? 90 : 180;
 
   useEffect(() => {
     setIsMounted(true);
@@ -37,8 +39,8 @@ const StackAnima = () => {
       <div className="relative w-[0px] h-[0px]">
         {icons.map((Icon, index) => {
           const theta = (index / icons.length) * 2 * Math.PI + (angle * Math.PI / 180);
-          const x = Math.cos(theta) * radius; // Adjust x-axis
-          const y = Math.sin(theta) * radius; // Adjust y-axis
+          const x = Math.cos(theta) * radius;
+          const y = Math.sin(theta) * radius;
           return (
             <div
               key={index}
