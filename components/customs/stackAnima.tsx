@@ -17,7 +17,7 @@ const StackAnima = () => {
     FaSass, RiTailwindCssFill, FaReact, SiNextdotjs, FaGithub,
   ];
 
-  const radius = typeof window !== 'undefined' && window.innerWidth < 1024 ? 90 : 180;
+  const radius = typeof window !== 'undefined' && window.innerWidth < 1024 ? 100 : 200;
 
   useEffect(() => {
     setIsMounted(true);
