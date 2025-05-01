@@ -17,7 +17,7 @@ const StackAnima = () => {
     FaSass, RiTailwindCssFill, FaReact, SiNextdotjs, FaGithub,
   ];
 
-  const radius = typeof window !== 'undefined' && window.innerWidth < 1024 ? 100 : 200;
+  const radius = typeof window !== 'undefined' && window.innerWidth < 1024 ? 90 : 180;
 
   useEffect(() => {
     setIsMounted(true);
@@ -33,7 +33,7 @@ const StackAnima = () => {
     <div
       className="absolute left-1/2 transform -translate-x-1/2"
       style={{
-        top: '12rem', 
+        top: '10.5rem', 
       }}
     >
       <div className="relative w-[0px] h-[0px]">
