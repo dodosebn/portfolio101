@@ -8,7 +8,7 @@ import TransitionLink from './utils/transitionLink';
 
 const MainInfoHolder = () => {
   return (
-    <div className='lg:text-start lg:relative lg:items-start text-center pt-[4.5rem]'>
+    <div className='lg:text-start lg:relative lg:items-start text-center lg:pt-[4.5rem]'>
       <section>
       <h1 className='text-red-600 dark:text-[#fafafa] font-bold'>ORJI DOMINION</h1>
        <h3 className='text-red-950 font-bold text-xl  dark:text-gradient-animated'>Your next Frontend Developer</h3>
