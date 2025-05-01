@@ -30,7 +30,7 @@ const StackAnima = () => {
   if (!isMounted) return null;
 
   return (
-    <div className="absolute top-[6rem] left-1/2 transform -translate-x-1/2">
+    <div className="absolute top-[8.2rem] left-1/2 transform -translate-x-1/2">
       <div className="relative w-[0px] h-[0px]">
         {icons.map((Icon, index) => {
           const theta = (index / icons.length) * 2 * Math.PI + (angle * Math.PI / 180);
