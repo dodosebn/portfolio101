@@ -1,13 +1,9 @@
 import React from 'react';
 import { BiLogoTypescript } from "react-icons/bi";
-import { FaSass } from "react-icons/fa";
+import { FaSass, FaReact, FaGithub, FaJs, FaHtml5 } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { FaReact } from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
-import { FaGithub } from "react-icons/fa";
-import { FaJs } from "react-icons/fa";
 import { IoLogoCss3 } from "react-icons/io";
-import { FaHtml5 } from "react-icons/fa";
 import StackSty from '@/components/utils/stackSty';
 
 interface StackAnimaProps {
@@ -29,8 +25,12 @@ const AboutAnima: React.FC<StackAnimaProps> = ({ className }) => {
 
   return (
     <div className={className}>
-      {icons.map(({ component: Icon, name }) => (
-        <div className='text-3xl lg:text-4xl' key={name}>
+      {icons.map(({ component: Icon, name }, index) => (
+        <div
+          key={name}
+          className="text-3xl lg:text-4xl animate-updown"
+          style={{ animationDelay: `${index * 0.2}s`, animationFillMode: 'both' }}
+        >
           <StackSty stackName={Icon} />
         </div>
       ))}

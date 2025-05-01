@@ -7,7 +7,7 @@ const AboutMeMain = () => {
  <div className='pt-2'>
    <p className=' lg:text-[1.20rem] text-lg'  style={{
     lineHeight: '1.75rem',
-   }}>I’m dedicated to front-end development and enjoy creating visually appealing, user-friendly interfaces. I focus on building complete features that enhance user experience while ensuring accessibility and responsiveness. My approach is detail-oriented, aiming for seamless interactions and intuitive designs. I’m always looking for ways to improve and stay up to date with the latest technologies and best practices in the field.
+   }}>I’m dedicated to front-end development and enjoy <span className='text-red-500 font-bold dark:text-gradient-animated'>creating visually appealing, user-friendly interfaces</span>. I focus on building complete features that enhance user experience while ensuring <span className='text-red-500 font-bold dark:text-gradient-animated'>accessibility and responsiveness</span> . My approach is detail-oriented, aiming for <span className='text-red-500 font-bold dark:text-gradient-animated'>seamless interactions and intuitive designs</span>. I’m always looking for ways to improve and stay up to date with the latest technologies and best practices in the field.
    </p>
    </div>
     </div>

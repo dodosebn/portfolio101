@@ -17,7 +17,6 @@ const StackAnima = () => {
     FaSass, RiTailwindCssFill, FaReact, SiNextdotjs, FaGithub,
   ];
 
-  // Radius based on screen width
   const radius = typeof window !== 'undefined' && window.innerWidth < 1024 ? 110 : 210;
 
   useEffect(() => {

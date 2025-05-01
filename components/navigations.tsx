@@ -1,7 +1,6 @@
-
 "use client";
 import React, { useState } from "react";
-import TransitionLink from "./utils/transitionLink";
+import TransitionLink from "./utils/transitionLink"; // Make sure this isn't blocking the click event
 import { useTheme } from "./themeProvider";
 import { IoMoonOutline } from "react-icons/io5";
 import { MdOutlineWbSunny } from "react-icons/md";
@@ -19,8 +18,8 @@ const Navigations = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center w-full">
-     <div className={mobileMenuOpen ? 'hidden' : 'block'}>
+    <nav className="relative flex justify-between items-center w-full z-10">
+      <div className={mobileMenuOpen ? 'hidden' : 'block'}>
         <Logo />
       </div>
 
@@ -38,7 +37,7 @@ const Navigations = () => {
             key="home"
             className={`text-[#565f6e] ${
               activeLink === "/" ? "dark:text-white text-black" : ""
-            }`}
+            } hover:text-black dark:hover:text-white transition-all`}
             onClick={() => handleClick("/")}
           >
             <TransitionLink href="/">Home</TransitionLink>
@@ -47,7 +46,7 @@ const Navigations = () => {
             key="about"
             className={`text-[#565f6e] ${
               activeLink === "about" ? "text-black dark:text-white" : ""
-            }`}
+            } hover:text-black dark:hover:text-white transition-all`}
             onClick={() => handleClick("about")}
           >
             <TransitionLink href="/About">About Me</TransitionLink>
@@ -56,7 +55,7 @@ const Navigations = () => {
             key="projects"
             className={`text-[#565f6e] ${
               activeLink === "projects" ? "text-black dark:text-white" : ""
-            }`}
+            } hover:text-black dark:hover:text-white transition-all`}
             onClick={() => handleClick("projects")}
           >
             <TransitionLink href="/Projects">Projects</TransitionLink>

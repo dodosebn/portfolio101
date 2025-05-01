@@ -16,8 +16,8 @@ const StackHolderProfile = () => {
       }}
       className='lg:w-[48%] lg:p-[5rem] lg:flex justify-center relative' 
     >
-      <div className="relative mx-auto w-[11rem] h-[11rem] lg:w-[23rem] lg:h-[23rem]"> 
-        {/* Profile Image */}
+      
+      <div className="relative mx-auto w-[11rem] h-[11rem] lg:w-[23rem] lg:h-[23rem] lg:top-[3rem]"> 
         <div className="absolute inset-0 flex items-center justify-center z-10">
           <Image
             src={profilePics}
@@ -27,7 +27,6 @@ const StackHolderProfile = () => {
           />
         </div>
         
-        {/* Rotating Stack Animation */}
         <div className="absolute inset-0 flex items-center justify-center">
           <StackAnima />
         </div>
