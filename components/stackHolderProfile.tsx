@@ -1,4 +1,4 @@
- import React from 'react';
+import React from 'react';
 import Image from 'next/image';
 import profilePics from '../public/imgs/ebn1 (2).jpg';
 import StackAnima from './customs/stackAnima';
@@ -30,5 +30,4 @@ const StackHolderProfile = () => {
   );
 };
 
-ex
-port default StackHolderProfile;
+export default StackHolderProfile;
