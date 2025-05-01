@@ -18,7 +18,7 @@ const StackAnima = () => {
   ];
 
   // Radius based on screen width
-  const radius = typeof window !== 'undefined' && window.innerWidth < 1024 ? 100 : 200;
+  const radius = typeof window !== 'undefined' && window.innerWidth < 1024 ? 110 : 210;
 
   useEffect(() => {
     const interval = setInterval(() => {
