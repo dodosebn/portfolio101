@@ -30,65 +30,99 @@ const StackAnima = () => {
     { component: FaGithub, name: 'GitHub' },
   ];
 
-  useEffect(() => setIsMounted(true), []);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!isMounted) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        if (entry.isIntersecting && !inView) setInView(true);
+        if (entry.isIntersecting && !inView) {
+          setInView(true);
+        }
       },
       { threshold: 0.5 }
     );
-    if (observerTarget.current) observer.observe(observerTarget.current);
+
+    if (observerTarget.current) {
+      observer.observe(observerTarget.current);
+    }
+
     return () => {
-      if (observerTarget.current) observer.unobserve(observerTarget.current);
+      if (observerTarget.current) {
+        observer.unobserve(observerTarget.current);
+      }
     };
   }, [isMounted, inView]);
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768); // target smaller screens more accurately
+      setIsMobile(window.innerWidth < 1024);
     };
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const orbitRadius = isMobile ? 70 : 150;
+  const radius = isMobile ? 100 : 200;
+
+  if (!isMounted) {
+    return (
+      <div
+        ref={observerTarget}
+        className="stack-container absolute z-10 flex flex-wrap gap-[2rem] text-red-500 dark:text-purple-400"
+      >
+        {icons.map(({ component: Icon, name }) => (
+          <div className="text-3xl lg:text-4xl" key={name}>
+            <StackSty stackName={Icon} />
+          </div>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div
       ref={observerTarget}
-      className={`stack-container relative mx-auto mt-10 w-fit h-[${orbitRadius * 2}px]`}
+      className={`stack-container absolute ${isMobile ? 'top-[11rem]' : 'top-[17.5rem]'} z-10 flex items-center justify-center w-full h-[400px] ${
+        inView ? 'orbit' : ''
+      }`}
+      style={
+        inView
+          ? {
+              position: 'relative',
+              animation: 'orbit-animation 10s linear infinite',
+              transformOrigin: 'center center',
+            }
+          : {}
+      }
     >
-      <div
-        className={`absolute inset-0 z-10`}
-        style={{
-          animation: inView ? 'orbit-animation 10s linear infinite' : undefined,
-          transformOrigin: 'center center',
-        }}
-      >
-        {icons.map(({ component: Icon, name }, index) => {
-          const angle = (index * (360 / icons.length)) * (Math.PI / 180);
-          const x = Math.cos(angle) * orbitRadius;
-          const y = Math.sin(angle) * orbitRadius;
-          return (
-            <div
-              key={name}
-              className="absolute text-3xl lg:text-4xl"
-              style={{
-                left: `calc(50% + ${x}px)`,
-                top: `calc(50% + ${y}px)`,
-                transform: `translate(-50%, -50%)`,
-              }}
-            >
-              <StackSty stackName={Icon} />
-            </div>
-          );
-        })}
-      </div>
+      {icons.map(({ component: Icon, name }, index) => {
+        const angle = (index / icons.length) * 2 * Math.PI;
+        const x = Math.cos(angle) * radius;
+        const y = Math.sin(angle) * radius;
+
+        return (
+          <div
+            key={name}
+            className="text-3xl lg:text-4xl absolute"
+            style={
+              inView
+                ? {
+                    transform: `translate(${x}px, ${y}px)`,
+                    animationDelay: `${index * 0.2}s`,
+                  }
+                : {}
+            }
+          >
+            <StackSty stackName={Icon} />
+          </div>
+        );
+      })}
+
       <style jsx global>{`
         @keyframes orbit-animation {
           0% {
