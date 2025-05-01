@@ -18,7 +18,7 @@ const StackHolderProfile = () => {
     >
       <div className="relative"> 
         <StackAnima />
-        <div className="mx-auto flex justify-center relative top-[7.7rem] lg:top-[17.5rem]">
+        <div className="mx-auto flex justify-center relative top-[8.2rem] lg:top-[17.5rem]">
           <Image
             src={profilePics}
             alt="My Profile"
