@@ -1,4 +1,4 @@
-import React from 'react';
+Seems the problem is fro. Here: import React from 'react';
 import Image from 'next/image';
 import profilePics from '../public/imgs/ebn1 (2).jpg';
 import StackAnima from './customs/stackAnima';
@@ -8,22 +8,21 @@ const StackHolderProfile = () => {
   return (
     <div
       style={{
+        position: 'relative',
         backgroundImage: `url(${bgImg.src})`,
         backgroundSize: 'cover',
         padding: '2rem',
+        objectFit: 'cover',
       }}
-      className="relative overflow-hidden lg:w-[48%] lg:p-[5rem] lg:flex justify-center"
+      className='lg:w-[48%] lg:p-[5rem] lg:flex justify-center relative' 
     >
-      <div className="relative w-full h-full">
-        {/* Orbiting icons */}
+      <div className="relative"> 
         <StackAnima />
-
-        
-        <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
+        <div className="mx-auto flex justify-center relative">
           <Image
             src={profilePics}
             alt="My Profile"
-            className="rounded-full w-[11rem] h-[11rem] lg:w-[23rem] lg:h-[23rem] border-[3px] border-solid border-[#d3d3d3] z-20"
+            className="rounded-full w-[11rem] h-[11rem] lg:w-[23rem] lg:h-[23rem] border-[3px] border-solid border-[#d3d3d3]"
           />
         </div>
       </div>
@@ -31,4 +30,5 @@ const StackHolderProfile = () => {
   );
 };
 
-export default StackHolderProfile;
+ex
+port default StackHolderProfile;
