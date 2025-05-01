@@ -11,17 +11,20 @@ import StackSty from '../utils/stackSty';
 
 const StackAnima = () => {
   const [angle, setAngle] = useState(0);
+
   const icons = [
     FaHtml5, IoLogoCss3, FaJs, BiLogoTypescript,
     FaSass, RiTailwindCssFill, FaReact, SiNextdotjs, FaGithub,
   ];
 
+  // Radius based on screen width
   const radius = typeof window !== 'undefined' && window.innerWidth < 1024 ? 80 : 150;
 
   useEffect(() => {
     const interval = setInterval(() => {
       setAngle(prev => (prev + 1) % 360);
-    }, 50);
+    }, 50); // Smooth rotation
+
     return () => clearInterval(interval);
   }, []);
 
@@ -32,6 +35,7 @@ const StackAnima = () => {
           const theta = (index / icons.length) * 2 * Math.PI + (angle * Math.PI / 180);
           const x = Math.cos(theta) * radius;
           const y = Math.sin(theta) * radius;
+
           return (
             <div
               key={index}
@@ -39,7 +43,7 @@ const StackAnima = () => {
               style={{
                 left: '50%',
                 top: '50%',
-                transform: `translate(${x}px, ${y}px)`,
+                transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
               }}
             >
               <StackSty stackName={Icon} />
