@@ -23,7 +23,7 @@ const StackAnima = () => {
     setIsMounted(true);
     const interval = setInterval(() => {
       setAngle(prev => (prev + 1) % 360);
-    }, 50); // 50ms for smoother animation
+    }, 50); 
     return () => clearInterval(interval);
   }, []);
 
@@ -33,7 +33,7 @@ const StackAnima = () => {
     <div
       className="absolute left-1/2 transform -translate-x-1/2"
       style={{
-        top: '11rem', // Mobile top position
+        top: '11rem', 
       }}
     >
       <div className="relative w-[0px] h-[0px]">
