@@ -33,7 +33,7 @@ const StackAnima = () => {
     <div
       className="absolute left-1/2 transform -translate-x-2/3"
       style={{
-        top: '9rem', 
+        top: '10rem', 
       }}
     >
       <div className="relative w-[0px] h-[0px]">
