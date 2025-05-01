@@ -1,126 +1,57 @@
 'use client';
-import { FaReact, FaSass, FaGithub, FaJs, FaHtml5 } from "react-icons/fa";
-import { SiNextdotjs } from "react-icons/si";
-import { IoLogoCss3 } from "react-icons/io";
-import { BiLogoTypescript } from "react-icons/bi";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from 'react';
+import { FaReact, FaSass, FaGithub, FaJs, FaHtml5 } from 'react-icons/fa';
+import { SiNextdotjs } from 'react-icons/si';
+import { IoLogoCss3 } from 'react-icons/io';
+import { BiLogoTypescript } from 'react-icons/bi';
+import { RiTailwindCssFill } from 'react-icons/ri';
 import StackSty from '../utils/stackSty';
-
-interface IconData {
-  component: React.ComponentType<{ className?: string }>;
-  name: string;
-}
 
 const StackAnima = () => {
   const [isMounted, setIsMounted] = useState(false);
-  const [inView, setInView] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const observerTarget = useRef<HTMLDivElement>(null);
-
+  const [angle, setAngle] = useState(0);
   const icons = [
-    { component: FaHtml5, name: 'HTML5' },
-    { component: IoLogoCss3, name: 'CSS3' },
-    { component: FaJs, name: 'JavaScript' },
-    { component: BiLogoTypescript, name: 'TypeScript' },
-    { component: FaSass, name: 'Sass' },
-    { component: RiTailwindCssFill, name: 'TailwindCSS' },
-    { component: FaReact, name: 'React' },
-    { component: SiNextdotjs, name: 'Next.js' },
-    { component: FaGithub, name: 'GitHub' },
+    FaHtml5, IoLogoCss3, FaJs, BiLogoTypescript,
+    FaSass, RiTailwindCssFill, FaReact, SiNextdotjs, FaGithub,
   ];
+
+  const radius = typeof window !== 'undefined' && window.innerWidth < 1024 ? 100 : 200; // Set 100px for mobile, 200px for desktop
 
   useEffect(() => {
     setIsMounted(true);
+    const interval = setInterval(() => {
+      setAngle(prev => (prev + 1) % 360);
+    }, 50); // 50ms for smoother animation
+    return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    if (!isMounted) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        setInView(entry.isIntersecting);
-      },
-      { threshold: 0.5 }
-    );
-
-    if (observerTarget.current) {
-      observer.observe(observerTarget.current);
-    }
-
-    return () => {
-      if (observerTarget.current) {
-        observer.unobserve(observerTarget.current);
-      }
-    };
-  }, [isMounted]);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  if (!isMounted) {
-    return (
-      <div
-        ref={observerTarget}
-        className="stack-container absolute z-10 flex flex-wrap gap-[2rem] text-red-500 dark:text-purple-400"
-      >
-        {icons.map(({ component: Icon, name }) => (
-          <div className='text-3xl lg:text-4xl' key={name}>
-            <StackSty stackName={Icon} />
-          </div>
-        ))}
-      </div>
-    );
-  }
+  if (!isMounted) return null;
 
   return (
     <div
-      ref={observerTarget}
-      className={`stack-container absolute ${isMobile ? 'top-[11rem]' :'top-[17.5rem]'} z-10 flex gap-[2rem] text-red-500 dark:text-purple-400 ${
-        inView ? 'orbit' : ''
-      }`}
-      style={inView ? {
-        animation: 'orbit-animation 10s linear infinite',
-        transformOrigin: 'center center',
-        width: '100%',
-        maxWidth: '100vw',
-        overflow: 'hidden',
-        position: 'relative'
-      } : {}}
+      className="absolute left-1/2 transform -translate-x-1/2"
+      style={{
+        top: '11rem', // Mobile top position
+      }}
     >
-      {icons.map(({ component: Icon, name }, index) => (
-        <div
-          key={name}
-          className="text-3xl lg:text-4xl"
-          style={inView ? {
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: `translate(-50%, -50%) rotate(${(index * (360 / icons.length))}deg) translateY(${isMobile ? '-100px' : '-200px'}) rotate(-${(index * (360 / icons.length))}deg)`,
-            animationDelay: `${index * 0.2}s`,
-          } : {}}
-        >
-          <StackSty stackName={Icon} />
-        </div>
-      ))}
-
-      <style jsx global>{`
-        @keyframes orbit-animation {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-      `}</style>
+      <div className="relative w-[0px] h-[0px]">
+        {icons.map((Icon, index) => {
+          const theta = (index / icons.length) * 2 * Math.PI + (angle * Math.PI / 180);
+          const x = Math.cos(theta) * radius; // Adjust x-axis
+          const y = Math.sin(theta) * radius; // Adjust y-axis
+          return (
+            <div
+              key={index}
+              className="absolute text-red-500 dark:text-purple-400 text-2xl lg:text-4xl"
+              style={{
+                transform: `translate(${x}px, ${y}px)`,
+              }}
+            >
+              <StackSty stackName={Icon} />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
