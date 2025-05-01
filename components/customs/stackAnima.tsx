@@ -18,7 +18,7 @@ const StackAnima = () => {
   const [isMobile, setIsMobile] = useState(false);
   const observerTarget = useRef<HTMLDivElement>(null);
 
-  const icons = [
+  const icons: IconData[] = [
     { component: FaHtml5, name: 'HTML5' },
     { component: IoLogoCss3, name: 'CSS3' },
     { component: FaJs, name: 'JavaScript' },
@@ -30,90 +30,65 @@ const StackAnima = () => {
     { component: FaGithub, name: 'GitHub' },
   ];
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  useEffect(() => setIsMounted(true), []);
 
   useEffect(() => {
     if (!isMounted) return;
-
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        if (entry.isIntersecting && !inView) {
-          setInView(true);
-        }
+        if (entry.isIntersecting && !inView) setInView(true);
       },
       { threshold: 0.5 }
     );
-
-    if (observerTarget.current) {
-      observer.observe(observerTarget.current);
-    }
-
+    if (observerTarget.current) observer.observe(observerTarget.current);
     return () => {
-      if (observerTarget.current) {
-        observer.unobserve(observerTarget.current);
-      }
+      if (observerTarget.current) observer.unobserve(observerTarget.current);
     };
   }, [isMounted, inView]);
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024);
+      setIsMobile(window.innerWidth < 768); // target smaller screens more accurately
     };
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  if (!isMounted) {
-    return (
-      <div
-        ref={observerTarget}
-        className="stack-container absolute z-10 flex flex-wrap gap-[2rem] text-red-500 dark:text-purple-400"
-      >
-        {icons.map(({ component: Icon, name }) => (
-          <div className="text-3xl lg:text-4xl" key={name}>
-            <StackSty stackName={Icon} />
-          </div>
-        ))}
-      </div>
-    );
-  }
+  const orbitRadius = isMobile ? 70 : 150;
 
   return (
     <div
       ref={observerTarget}
-      className={`stack-container absolute ${isMobile ? 'top-[11rem]' : 'top-[17.5rem]'} z-10 flex gap-[2rem] text-red-500 dark:text-purple-400 ${inView ? 'orbit' : ''}`}
-      style={
-        inView
-          ? {
-              animation: 'orbit-animation 10s linear infinite',
-              transformOrigin: 'center center',
-            }
-          : {}
-      }
+      className={`stack-container relative mx-auto mt-10 w-fit h-[${orbitRadius * 2}px]`}
     >
-      {icons.map(({ component: Icon, name }, index) => (
-        <div
-          className="text-3xl lg:text-4xl"
-          key={name}
-          style={
-            inView
-              ? {
-                  position: 'absolute',
-                  top: '50%',
-                  left: '50%',
-                  transform: `translate(-50%, -50%) rotate(${(index * (360 / icons.length))}deg) translateY(${isMobile ? '-100px' : '-200px'}) rotate(${-(index * (360 / icons.length))}deg)`,
-                  animationDelay: `${index * 0.2}s`,
-                }
-              : {}
-          }
-        >
-          <StackSty stackName={Icon} />
-        </div>
-      ))}
+      <div
+        className={`absolute inset-0 z-10`}
+        style={{
+          animation: inView ? 'orbit-animation 10s linear infinite' : undefined,
+          transformOrigin: 'center center',
+        }}
+      >
+        {icons.map(({ component: Icon, name }, index) => {
+          const angle = (index * (360 / icons.length)) * (Math.PI / 180);
+          const x = Math.cos(angle) * orbitRadius;
+          const y = Math.sin(angle) * orbitRadius;
+          return (
+            <div
+              key={name}
+              className="absolute text-3xl lg:text-4xl"
+              style={{
+                left: `calc(50% + ${x}px)`,
+                top: `calc(50% + ${y}px)`,
+                transform: `translate(-50%, -50%)`,
+              }}
+            >
+              <StackSty stackName={Icon} />
+            </div>
+          );
+        })}
+      </div>
       <style jsx global>{`
         @keyframes orbit-animation {
           0% {
