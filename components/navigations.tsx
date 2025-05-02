@@ -14,7 +14,7 @@ const Navigations = () => {
 
   const handleClick = (link: "/" | "about" | "projects") => {
     setActiveLink(link);
-    setMobileMenuOpen(false);
+    setMobileMenuOpen(true);
   };
 
   return (
