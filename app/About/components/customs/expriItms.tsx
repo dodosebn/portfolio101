@@ -1,4 +1,3 @@
-// Define types for experience, formal education, and self-taught education
 interface Experience {
     id: number;
     duration: string;
@@ -45,25 +44,25 @@ interface Experience {
     {
       id: 1,
       title: 'Web Development BootCamp',
-      duration: 'Zuri Training, March 2024 - May 2024',
-      date: '2024-03-01', // Use string-based date
+      duration: 'Zuri Training, May 2023 - August 2023',
+      date: '2024-03-01', 
     },
     {
       id: 2,
       title: 'Data Structures and Algorithms',
-      duration: 'FreeCodeCamp, April- August 2024',
+      duration: 'FreeCodeCamp, January 2024- April 2024',
       date: '2024-03-01',
     },
     {
       id: 3,
       title: 'React Full Course',
-      duration: 'netNinja, August - November 2024',
+      duration: 'netNinja, September 2024',
       date: '2024-08-01',
     },
     {
       id: 4,
       title: 'Front End Development Libraries',
-      duration: 'FreeCodeCamp, December 2024 - November 2025',
+      duration: 'FreeCodeCamp, December 2024 - February 2025',
       date: '2024-12-01',
     },
     {
