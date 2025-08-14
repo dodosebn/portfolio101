@@ -7,9 +7,9 @@ const Expri: React.FC = () => {
   const sortedEduSelf = [...eduSelf].sort((a, b) => b.date.localeCompare(a.date));
 
   return (
-    <div>
+    <div className='my-4'>
      
-      <h1 className='text-2xl font-[650] mb-4'>Experience</h1>
+      <h1 className='text-2xl font-[650] py-3'>Experience</h1>
       <div className='space-y-4'>
         {sortedExperience.map((experience) => (
           <div key={experience.id} className='space-y-1'>

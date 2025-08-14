@@ -27,7 +27,7 @@ interface Experience {
       duration: 'January 2025 - March 2025',
       title: 'HNG12 Internship',
       content: 'Collaborated with other interns, developed and deployed complex web applications delivering pixel-perfect design',
-      date: '2025-01-01', // Use string-based date
+      date: '2025-01-01', 
     },
   ];
   
@@ -36,7 +36,7 @@ interface Experience {
       id: 1,
       title: 'BSc in Statistics',
       school: 'AE-FUNAI Nigeria, 2023 - present',
-      date: '2023-01-01', // Use string-based date
+      date: '2023-01-01',
     },
   ];
   
@@ -68,7 +68,7 @@ interface Experience {
     {
       id: 5,
       title: 'React, Next.js, Redux & More',
-      duration: 'Jonas Schmedtmann, March 2025 - present',
+      duration: 'Jonas Schmedtmann, March 2025 - July 2025',
       date: '2025-03-01',
     },
   ];

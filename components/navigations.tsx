@@ -19,7 +19,7 @@ const Navigations = () => {
 
   return (
     <nav className="relative flex justify-between items-center w-full z-10">
-      <div className={mobileMenuOpen ? 'hidden' : 'block'}>
+      <div className={mobileMenuOpen ? "hidden" : "block"}>
         <Logo />
       </div>
 
@@ -33,11 +33,14 @@ const Navigations = () => {
       </button>
 
       {/* Nav Links (Mobile & Desktop) */}
-      <div className={`${mobileMenuOpen ? 'flex' : 'hidden'} md:flex items-center gap-4`}>
-        <ul className="flex flex-row gap-3 lg:gap-6 navbar dark:border-[#e5e7eb] border-1 border-[#1f2937] dark:text-[#fafafa] p-3 rounded-sm shadow-sm whitespace-nowrap">
+      <div className={`${mobileMenuOpen ? "flex" : "hidden"} md:flex items-center gap-4`}>
+        <ul
+          className="flex flex-row gap-3 lg:gap-6 navbar dark:border-[#e5e7eb] border-1 border-[#1f2937]
+         p-3 rounded-sm shadow-sm whitespace-nowrap"
+        >
           <li
             key="home"
-            className={`text-[#565f6e] ${
+            className={`text-[#565f6e] dark:text-gray-300 ${
               activeLink === "/" ? "dark:text-white text-black" : ""
             } hover:text-black dark:hover:text-white transition-all`}
             onClick={() => handleClick("/")}
@@ -46,7 +49,7 @@ const Navigations = () => {
           </li>
           <li
             key="about"
-            className={`text-[#565f6e] ${
+            className={`text-[#565f6e] dark:text-gray-300 ${
               activeLink === "about" ? "text-black dark:text-white" : ""
             } hover:text-black dark:hover:text-white transition-all`}
             onClick={() => handleClick("about")}
@@ -55,7 +58,7 @@ const Navigations = () => {
           </li>
           <li
             key="projects"
-            className={`text-[#565f6e] ${
+            className={`text-[#565f6e] dark:text-gray-300 ${
               activeLink === "projects" ? "text-black dark:text-white" : ""
             } hover:text-black dark:hover:text-white transition-all`}
             onClick={() => handleClick("projects")}
@@ -66,7 +69,11 @@ const Navigations = () => {
       </div>
 
       {/* Theme Button (Mobile) */}
-      <div className={`${mobileMenuOpen ? 'flex' : 'hidden'} dark:border-[#e5e7eb] border-1 border-[#1f2937] dark:text-[#fafafa] p-3 rounded-sm shadow-sm`}>
+      <div
+        className={`${
+          mobileMenuOpen ? "flex" : "hidden"
+        } dark:border-[#e5e7eb] border-1 border-[#1f2937] dark:text-[#fafafa] p-3 rounded-sm shadow-sm`}
+      >
         <button type="button" onClick={toggleTheme}>
           {theme === "light" ? (
             <IoMoonOutline size={24} />

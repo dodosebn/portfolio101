@@ -1,6 +1,6 @@
 import { MdAddIcCall } from "react-icons/md";
 import { IoMdMailUnread } from "react-icons/io";
-import { FaMagnifyingGlassLocation } from "react-icons/fa6";
+import { FaLocationDot } from "react-icons/fa6";
 
 interface ContactDetail {
   id: number;
@@ -22,7 +22,7 @@ const ContactDetails: ContactDetail[] = [
   {
     id: 3,
     content: 'Abakaliki, Nigeria',
-    logo: FaMagnifyingGlassLocation,
+    logo: FaLocationDot,
   },
 ];
 

@@ -11,38 +11,35 @@ const Logo = () => {
   ];
 
   return (
-    <div className="logo-container relative inline-block">
+    <div className="logo-container relative inline-block font-bold">
       <div className="flex">
         {letters.map(({ char, offset, delay }) => (
-          <span 
+          <span
             key={char + offset}
-            className="logo-letter inline-block relative"
+            className={`
+              inline-block relative text-transparent bg-clip-text
+              /* Light mode = red gradient */
+              bg-gradient-to-r from-red-500 via-red-600 to-red-700
+              /* Dark mode = blue→purple→pink gradient */
+              dark:bg-gradient-to-r dark:from-blue-500 dark:via-purple-500 dark:to-pink-500
+            `}
             style={{
               transform: `translateY(${offset}px)`,
               marginLeft: offset !== -2 ? '-0.2rem' : '0',
-              animationDelay: `${delay}s`
+              animation: 'gradient-x 15s ease infinite',
+              animationDelay: `${delay}s`,
+              backgroundSize: '200% 200%',
             }}
           >
             {char}
           </span>
         ))}
       </div>
-      
+
       <style jsx>{`
         .logo-container {
           font-family: 'Montserrat', 'Playfair', sans-serif;
-        }
-        
-        .logo-letter {
           font-size: 2.25rem;
-          font-weight: 700;
-          background: linear-gradient(270deg, #3498db, #9b59b6, #e91e63);
-          background-size: 200% 200%;
-          color: transparent;
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: gradient-x 15s ease infinite;
         }
 
         @keyframes gradient-x {
