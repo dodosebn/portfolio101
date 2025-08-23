@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaXTwitter } from "react-icons/fa6";
-import { FaGithub } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { IoMailOutline } from "react-icons/io5";
 import StackSty from '../utils/stackSty';
@@ -8,7 +8,11 @@ import StackSty from '../utils/stackSty';
 const ContactIcons = () => {
     const Icons = [
         { name: FaXTwitter, link: 'https://www.linkedin.com/in/orji-dominion-ebubennia-2260542ba/', id: 1 },
-        { name: FaGithub, link: 'https://github.com/dodosebn', id: 2 },
+{
+  name: FaWhatsapp,
+  link: `https://wa.me/2347069280208?text=${encodeURIComponent("Hey Orji, I'm reaching out from your portfolio...")}`,
+  id: 2
+},
         { name: FaLinkedin, link: 'https://www.linkedin.com/in/orji-dominion-ebubennia-2260542ba/', id: 3 },
         { name: IoMailOutline, link: 'mailto:orjidominion32@gmail.com', id: 4 },
     ];

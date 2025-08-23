@@ -7,6 +7,8 @@ import { SiNextdotjs } from 'react-icons/si';
 import { IoLogoCss3 } from 'react-icons/io';
 import { BiLogoTypescript } from 'react-icons/bi';
 import { RiTailwindCssFill } from 'react-icons/ri';
+import { RiSupabaseFill } from "react-icons/ri";
+
 import StackSty from '../utils/stackSty';
 
 const StackAnima = () => {
@@ -14,7 +16,7 @@ const StackAnima = () => {
 
   const icons = [
     FaHtml5, IoLogoCss3, FaJs, BiLogoTypescript,
-    FaSass, RiTailwindCssFill, FaReact, SiNextdotjs, FaGithub,
+    FaSass, RiTailwindCssFill, FaReact, SiNextdotjs, FaGithub, RiSupabaseFill
   ];
 
   const radius = typeof window !== 'undefined' && window.innerWidth < 1024 ? 110 : 210;
