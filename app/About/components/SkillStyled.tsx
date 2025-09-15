@@ -1,7 +1,7 @@
 import React from 'react'
 import SkillHol from './customs/skillHol'
 import { FaSass } from "react-icons/fa";
-import { RiTailwindCssFill } from "react-icons/ri";
+import { RiSupabaseFill, RiTailwindCssFill } from "react-icons/ri";
 import { FaReact } from "react-icons/fa";
 import { SiNextdotjs } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
@@ -55,6 +55,11 @@ const SkillStyled = () => {
             id: 9,
             name: 'Version Control',
             icon: FaGithub
+        },
+        {
+          id: 10,
+          name: 'Supabase',
+          icon: RiSupabaseFill
         }
     ]
   return (

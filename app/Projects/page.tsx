@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import PjCont from './projCont';
-import pjMaps from './pjEasyAdd';
+import React from "react";
+import { motion } from "framer-motion";
+import PjCont from "./projCont";
+import pjMaps from "./pjEasyAdd";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -13,19 +13,19 @@ const cardVariants = {
     transition: {
       duration: 0.5,
       delay: i * 0.2,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   }),
 };
 
 const Projects = () => {
   return (
-    <div className='p-4 lg:px-16'>
-      <main className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+    <div className="p-4 lg:px-16">
+      <main className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {pjMaps.length > 0 ? (
           pjMaps.map((pj, i) => (
             <motion.div
-              className='shadow-custom py-4 dark:border-[1.2px] border-[#fafafa]'
+              className="shadow-custom py-4 dark:border-[1.2px] border-[#fafafa]"
               key={pj.id}
               variants={cardVariants}
               initial="hidden"
@@ -37,7 +37,7 @@ const Projects = () => {
             </motion.div>
           ))
         ) : (
-          <div className='col-span-2 text-center py-12 text-gray-500'>
+          <div className="col-span-2 text-center py-12 text-gray-500">
             New projects coming soon!
           </div>
         )}

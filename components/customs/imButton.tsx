@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaBookReader } from "react-icons/fa";
 
 interface Props {
   name: string;

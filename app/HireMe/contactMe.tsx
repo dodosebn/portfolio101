@@ -1,6 +1,6 @@
-'use client';
-import ContactDetails from './customs/contactMaps';
-import FormItself from '@/components/utils/formItself';
+"use client";
+import ContactDetails from "./customs/contactMaps";
+import FormItself from "@/components/utils/formItself";
 
 const ContactMe: React.FC = () => {
   return (
@@ -9,7 +9,8 @@ const ContactMe: React.FC = () => {
         <span className="text-2xl text-gradient-animated">Contact me!</span>
         <br />
         <span className="text-gradient-animated">
-          I'm always open to new opportunities and excited to collaborate on innovative projects.
+          I'm always open to new opportunities and excited to collaborate on
+          innovative projects.
         </span>
       </h1>
 

@@ -1,12 +1,7 @@
 import { MdAddIcCall } from "react-icons/md";
 import { IoMdMailUnread } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
-
-interface ContactDetail {
-  id: number;
-  content: string;
-  logo: React.ComponentType;
-}
+import { ContactDetail } from "@/types";
 
 const ContactDetails: ContactDetail[] = [
   {

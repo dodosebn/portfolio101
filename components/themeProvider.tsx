@@ -1,17 +1,19 @@
-'use client';
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-
-interface ThemeContextType {
-  theme: 'light' | 'dark';
-  toggleTheme: () => void;
-}
+"use client";
+import { ThemeContextType } from "@/types";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function useTheme() {
   const context = useContext(ThemeContext);
   if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
+    throw new Error("useTheme must be used within a ThemeProvider");
   }
   return context;
 }
@@ -21,21 +23,21 @@ interface ThemeProviderProps {
 }
 
 function ThemeProvider({ children }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme as 'light' | 'dark');
-    document.documentElement.classList.add(savedTheme); // Add 'light' or 'dark' class
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme as "light" | "dark");
+    document.documentElement.classList.add(savedTheme); 
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
+    const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
+    localStorage.setItem("theme", newTheme);
 
-    document.documentElement.classList.remove('light', 'dark'); // Remove existing classes
-    document.documentElement.classList.add(newTheme); // Add new class
+    document.documentElement.classList.remove("light", "dark"); 
+    document.documentElement.classList.add(newTheme); 
   };
 
   return (

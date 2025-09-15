@@ -24,7 +24,7 @@ const StackAnima = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setAngle(prev => (prev + 1) % 360);
-    }, 50); // Smooth rotation
+    }, 50); 
 
     return () => clearInterval(interval);
   }, []);

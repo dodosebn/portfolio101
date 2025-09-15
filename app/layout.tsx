@@ -6,7 +6,8 @@ import ThemeProvider from "@/components/themeProvider";
 
 export const metadata: Metadata = {
   title: "ORJI DOMINION",
-  description: "Detail-oriented frontend developer who doesn't joke with problem-solving,  divideAndConquer() is my route🤝",
+  description:
+    "Detail-oriented frontend developer who doesn't joke with problem-solving,  divideAndConquer() is my route🤝",
 };
 
 export default function RootLayout({
@@ -16,8 +17,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-<body className="bg-white text-black dark:dark-gradient dark:text-[#d9d9d9]">
-<ThemeProvider>
+      <body className="bg-white text-black dark:dark-gradient dark:text-[#d9d9d9]">
+        <ThemeProvider>
           <div className="p-6 lg:px-16">
             <Navigations />
           </div>

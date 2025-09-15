@@ -1,11 +1,8 @@
 'use client';
-import Link, {LinkProps} from 'next/link';
-import { ReactNode } from 'react';
+import { TransitionLinkProps } from '@/types';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-interface TransitionLinkProps extends LinkProps{
-    children: ReactNode;
-    href: string;
-}
+
 function sleep(ms: number): Promise<void> {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }

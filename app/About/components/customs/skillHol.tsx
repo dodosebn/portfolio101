@@ -1,9 +1,6 @@
+import { SkillHolProps } from '@/types';
 import React from 'react'
-// import { stackStyProps } from '@/types';
-interface SkillHolProps {
-    name: string;
-    stackName: React.ComponentType ;
-}
+
 const SkillHol  = ({name, stackName: IconComponent}: SkillHolProps) => {
   return (
     <div className='rounded-lg bg-[#09090b] dark:bg-[#1f2937] text-white py-1 px-2 flex gap-1'>

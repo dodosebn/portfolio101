@@ -9,12 +9,13 @@ import { BiMenuAltRight, BiX } from "react-icons/bi";
 
 const Navigations = () => {
   const { theme, toggleTheme } = useTheme();
-  const [activeLink, setActiveLink] = useState<"/" | "about" | "projects" | null>(null);
+  const [activeLink, setActiveLink] = useState<
+    "/" | "about" | "projects" | null
+  >(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleClick = (link: "/" | "about" | "projects") => {
     setActiveLink(link);
-    // Do NOT auto-close menu — let BiX handle it manually
   };
 
   return (
@@ -23,7 +24,6 @@ const Navigations = () => {
         <Logo />
       </div>
 
-      {/* Mobile Toggle */}
       <button
         type="button"
         className="md:hidden p-2"
@@ -32,8 +32,11 @@ const Navigations = () => {
         {mobileMenuOpen ? <BiX size={24} /> : <BiMenuAltRight size={24} />}
       </button>
 
-      {/* Nav Links (Mobile & Desktop) */}
-      <div className={`${mobileMenuOpen ? "flex" : "hidden"} md:flex items-center gap-4`}>
+      <div
+        className={`${
+          mobileMenuOpen ? "flex" : "hidden"
+        } md:flex items-center gap-4`}
+      >
         <ul
           className="flex flex-row gap-3 lg:gap-6 navbar dark:border-[#e5e7eb] border-1 border-[#1f2937]
          p-3 rounded-sm shadow-sm whitespace-nowrap"
@@ -68,7 +71,6 @@ const Navigations = () => {
         </ul>
       </div>
 
-      {/* Theme Button (Mobile) */}
       <div
         className={`${
           mobileMenuOpen ? "flex" : "hidden"
@@ -83,7 +85,6 @@ const Navigations = () => {
         </button>
       </div>
 
-      {/* Theme Button (Desktop) */}
       <div className="hidden md:flex">
         <button type="button" onClick={toggleTheme}>
           {theme === "light" ? (

@@ -20,9 +20,7 @@ const Logo = () => {
               key={char + offset}
               className={`
               inline-block relative text-transparent bg-clip-text
-              /* Light mode = red gradient */
               bg-gradient-to-r from-red-500 via-red-600 to-red-700
-              /* Dark mode = blue→purple→pink gradient */
               dark:bg-gradient-to-r dark:from-blue-500 dark:via-purple-500 dark:to-pink-500
             `}
               style={{
