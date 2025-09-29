@@ -35,7 +35,7 @@ const experienceDetails = [
     duration: "May 2025 - August 2025",
     title: "Frontend Developer",
     content:
-      "Collaborated with other an experienced Backend Developer, in a bringing Projects to Life",
+      "Collaborated with a senior experienced FullStack Developer to bring projects to life",
             date: '2025-31-03', 
 
   },

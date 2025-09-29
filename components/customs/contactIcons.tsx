@@ -21,7 +21,7 @@ const ContactIcons = () => {
     },
     {
       name: FaLinkedin,
-      link: "https://www.linkedin.com/in/orji-dominion-ebubennia-2260542ba/",
+      link: "https://www.linkedin.com/in/orji/",
       id: 3,
     },
     { name: IoMailOutline, link: "mailto:orjidominion32@gmail.com", id: 4 },
