@@ -42,12 +42,7 @@ const PjCont: React.FC<pjProps> = ({
             </ul>
           </div>
           <div className="flex gap-[1rem] pt-4">
-            <button className="bg-[#e5e7eb] text-[#09090b] px-2 py-[0.3rem] rounded-md flex gap-[0.5rem]">
-              <span className="pt-[0.15rem]">
-                <AiOutlineGithub />
-              </span>
-              <a href={repoUrl}>Github</a>
-            </button>
+          
             <button className="bg-[#42674f] text-[#e6e6e6] px-2 py-[0.3rem] rounded-md flex gap-[0.5rem]">
               <span className="pt-[0.15rem]">
                 <IoIosLink />
