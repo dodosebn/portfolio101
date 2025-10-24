@@ -1,26 +1,4 @@
 
-interface Experience {
-  id: number;
-  duration: string;
-  title: string;
-  content: string;
-  date: Date;
-}
-
-interface FormalEducation {
-  id: number;
-  title: string;
-  school: string;
-  date: Date;
-}
-
-interface SelfTaughtEducation {
-  id: number;
-  title: string;
-  duration: string;
-  date: Date;
-}
-
 const experienceDetails = [
   {
     id: 1,

@@ -64,8 +64,8 @@ const SkillStyled = () => {
     ]
   return (
     <div className='flex gap-6 flex-wrap pt-4'>
-    {stacks.map((stackoo) => (
-      <div key={stackoo.id} >
+    {stacks.map((stackoo, index) => (
+      <div key={`${stackoo.id}-${index}`} >
         <SkillHol name={stackoo.name} stackName={stackoo.icon}/>
       </div>
     ))}

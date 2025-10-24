@@ -35,7 +35,6 @@ const ProjectsHolder = () => {
             pjBio={pjMaps[slideIndex].pjBio}
             pjPics={pjMaps[slideIndex].pjPics}
             liveUrl={pjMaps[slideIndex].liveUrl}
-            repoUrl={pjMaps[slideIndex].repoUrl}
             pjStacks={pjMaps[slideIndex].pjStacks}
           />
         </div>

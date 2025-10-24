@@ -28,5 +28,4 @@ export interface stackStyProps {
     pjStacks: string[];
     pjPics: string | StaticImageData;
         liveUrl: string;
-    repoUrl: string;
   }

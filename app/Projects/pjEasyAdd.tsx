@@ -43,9 +43,9 @@ const pjMaps = [
 {
   id: 5,
   liveUrl: "https://children-of-faith.vercel.app/",
-  pjTitle: "An NGO Site",
+  pjTitle: "Children of Faith",
   pjBio:
-    "A web application showcasing the mission, work, and activities of a non-governmental organization. Built with Next.js, TypeScript, and Tailwind CSS. Practiced server-side rendering and clean component structuring in this project.",
+    "A web application showcasing the mission, work, and activities of a non-governmental Charity organization. Built with Next.js, TypeScript, and Tailwind CSS. Practiced server-side rendering and clean component structuring in this project.",
   pjPics: children,
   pjStacks: ["Next.js", "TypeScript", "Tailwind"],
 },

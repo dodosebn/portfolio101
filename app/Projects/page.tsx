@@ -33,7 +33,7 @@ const Projects = () => {
               viewport={{ once: true, amount: 0.3 }}
               custom={i}
             >
-              <PjCont {...pj} />
+              <PjCont  {...pj} />
             </motion.div>
           ))
         ) : (

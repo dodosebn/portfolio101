@@ -7,7 +7,7 @@ import ThemeProvider from "@/components/themeProvider";
 export const metadata: Metadata = {
   title: "ORJI DOMINION",
   description:
-    "Detail-oriented frontend developer who doesn't joke with problem-solving,  divideAndConquer() is my route🤝",
+    "Disciplined Web Developer, Who Clearly Understands how the web works. A Solidity FanBoy ",
 };
 
 export default function RootLayout({

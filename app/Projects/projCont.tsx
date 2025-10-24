@@ -1,7 +1,6 @@
 import React from "react";
 import { pjProps } from "@/types";
 import Image from "next/image";
-import { AiOutlineGithub } from "react-icons/ai";
 import { IoIosLink } from "react-icons/io";
 
 const PjCont: React.FC<pjProps> = ({
@@ -10,7 +9,6 @@ const PjCont: React.FC<pjProps> = ({
   pjStacks,
   pjPics,
   liveUrl,
-  repoUrl,
 }) => {
   return (
     <div className="p-2 lg:px-6">
