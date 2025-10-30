@@ -11,7 +11,7 @@ function App() {
      <div className="py-1 p-4 lg:px-16">
       <div className="lg:flex">
         <StackHolderProfile />
-        <div className="flex-1 bottom-10 relative lg:bottom-[4.2rem] lg:left-[2rem]">
+        <div className="flex-1 bottom-10 relative lg:bottom-[4.2rem] lg:left-8">
           <MainInfoHolder />
         </div>
       </div>

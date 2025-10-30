@@ -16,6 +16,7 @@ const config = defineConfig({
     tanstackStart(),
     viteReact(),
   ],
+   base: '/',
 })
 
 export default config

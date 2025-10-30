@@ -1,4 +1,3 @@
-"use client";
 import ContactDetails from "./customs/contactMaps";
 import FormItself from "@/components/utils/formItself";
 
