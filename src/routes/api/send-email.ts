@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer'
 import { createFileRoute } from '@tanstack/react-router'
 import { json } from '@tanstack/react-start'
 
-export const Route = createFileRoute('/api/send-email' as any)({
+export const Route = createFileRoute('/api/send-email')({
   server: {
     handlers: {
       POST: async ({ request }) => {
