@@ -8,6 +8,8 @@ import StackSty from '@/components/utils/stackSty';
 import { IoLogoNodejs } from "react-icons/io";
 import { FaDocker } from "react-icons/fa";
 import { SiJquery } from "react-icons/si";
+import { SiFirebase } from "react-icons/si";
+
 interface StackAnimaProps {
   className: string;
 }
@@ -25,7 +27,8 @@ const AboutAnima: React.FC<StackAnimaProps> = ({ className }) => {
     { component: FaGithub, name: 'GitHub' },
     {component: IoLogoNodejs, name: 'Node JS'},
     {component: FaDocker, name: 'Docker'},
-    {component: SiJquery, name: 'SiJquery '}
+    {component: SiJquery, name: 'SiJquery '},
+    {component: SiFirebase, name: 'Firebase'}
   ];
 
   return (

@@ -35,7 +35,7 @@ const MainInfoHolder = () => {
         </TransitionLink>
         <TransitionLink
           href={
-            "https://docs.google.com/document/d/1irmj_R2CwMLJtFTYmbhl2S19h3urlKTx_blSky1rT0c/edit?usp=sharing"
+            "/doc/Orji-Dominion-Resume.pdf"
           }
         >
           <ImButton name="View my Resume" icon={FaBookReader} />

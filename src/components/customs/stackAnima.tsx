@@ -11,6 +11,7 @@ import { RiSupabaseFill } from "react-icons/ri";
 import { IoLogoNodejs } from "react-icons/io";
 import { FaDocker } from "react-icons/fa";
 import { SiJquery } from "react-icons/si";
+import { SiFirebase } from "react-icons/si";
 
 import StackSty from '../utils/stackSty';
 
@@ -19,7 +20,7 @@ const StackAnima = () => {
 
   const icons = [
     FaHtml5, IoLogoCss3, FaJs, BiLogoTypescript,
-    FaSass, RiTailwindCssFill, FaReact, SiNextdotjs, FaGithub, RiSupabaseFill, IoLogoNodejs, SiJquery, FaDocker
+    FaSass, RiTailwindCssFill, SiFirebase, FaReact, SiNextdotjs, FaGithub, RiSupabaseFill, IoLogoNodejs, SiJquery, FaDocker
   ];
 
   const radius = typeof window !== 'undefined' && window.innerWidth < 1024 ? 110 : 210;

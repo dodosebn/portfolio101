@@ -2,7 +2,7 @@ import SkillHol from './customs/skillHol'
 import { FaSass } from "react-icons/fa";
 import { RiSupabaseFill, RiTailwindCssFill } from "react-icons/ri";
 import { FaReact } from "react-icons/fa";
-import { SiNextdotjs } from "react-icons/si";
+import { SiFirebase, SiNextdotjs } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
 import { BiLogoTypescript } from "react-icons/bi";
 import { FaJs } from "react-icons/fa";
@@ -10,6 +10,7 @@ import { IoLogoCss3 } from "react-icons/io";
 import { FaHtml5 } from "react-icons/fa";
 import { IoLogoNodejs } from "react-icons/io";
 import { FaDocker } from "react-icons/fa";
+
 const SkillStyled = () => {
    const stacks =  [
         {
@@ -71,7 +72,13 @@ const SkillStyled = () => {
           id: 12,
           name: 'Docker',
           icon:  FaDocker
-        }    
+        },
+        {
+          id: 13,
+          name: 'Firebase',
+          icon:SiFirebase    
+          
+        }
     ]
   return (
     <div className='flex gap-6 flex-wrap pt-4'>

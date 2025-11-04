@@ -1,5 +1,4 @@
 import { SkillHolProps } from "@/types";
-import React from "react";
 
 const SkillHol = ({ name, stackName: IconComponent }: SkillHolProps) => {
   return (
