@@ -5,7 +5,7 @@ const Logo = () => {
   return (
     <div className="logo-container relative inline-block cursor-pointer">
       <div className="flex gap-1 items-center">
-        <a href="public/doc/Orji-Dominion-Resume.pdf" target="_blank">
+        <a href="/doc/Orji-Dominion-Resume.pdf" target="_blank" rel="noopener noreferrer">
           <IoDocumentTextOutline size={19} className="dark:text-[#FFA500] text-[#f1c40f] transition" />
         </a>
 

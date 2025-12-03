@@ -34,7 +34,7 @@ const MainInfoHolder = () => {
           <ImButton name="Hire Me" icon={TbMessages} />
         </TransitionLink>
 
-        <a href="public/doc/Orji-Dominion-Resume.pdf" target="_blank">
+        <a href="/doc/Orji-Dominion-Resume.pdf" target="_blank" rel="noopener noreferrer">
           <ImButton name="View Resume" icon={FaBookReader} />
         </a>
       </section>
