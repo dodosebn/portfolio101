@@ -1,56 +1,65 @@
 import React from "react";
 import { IoIosLink } from "react-icons/io";
 import type { pjProps } from "@/types";
+import { HiArrowUpRight } from "react-icons/hi2";
 
 const PjCont: React.FC<pjProps> = ({
   pjTitle,
   pjBio,
   pjStacks,
-  pjPics,
   liveUrl,
 }) => {
   return (
-    <div className="p-2 lg:px-6">
-      <main className="flex justify-center flex-col  gap-[2rem]">
-        <section>
-                 <img
+ <section
+  className="relative bg-white dark:bg-[#151515] hover:bg-black/90 rounded-md shadow-lg 
+  hover:shadow-xl transition-all duration-300 p-6 border border-gray-400 dark:border-gray-700 
+  group w-full h-[320px] flex flex-col justify-between"
+>
+  <span className="absolute bottom-0 left-0 w-80 h-[3px] rounded-full bg-white dark:bg-[#d8d2d2] 
+    scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
 
-            src={pjPics}
-            alt={pjTitle}
-            height={300}
-            className="object-cover w-full"
-          />
-        </section>
-        <section className="lg:text-start text-center">
-          <h1 className="text-[#09090b]  font-bold pt-2 dark:text-[#fafafa]">
-            {pjTitle}
-          </h1>
-          <p className="pt-1 text-[1rem] lg:text-[18px]">{pjBio}</p>
-          <div className="pt-2">
-            <h3 className="font-bold">Tech stack</h3>
-            <ul className="flex flex-row flex-wrap gap-[0.5rem] pt-2">
-              {pjStacks.map((stack: string, index: number) => (
-                <li
-                  key={index}
-                  className="rounded-xl text-[1rem] bg-[#1f2937] text-white px-[0.5rem] py-[0.5rem] "
-                >
-                  {stack}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="flex gap-[1rem] pt-4">
-          
-            <button className="bg-[#42674f] text-[#e6e6e6] px-2 py-[0.3rem] rounded-md flex gap-[0.5rem]">
-              <span className="pt-[0.15rem]">
-                <IoIosLink />
-              </span>{" "}
-              <a href={liveUrl}>Live</a>
-            </button>
-          </div>
-        </section>
-      </main>
+  <div className="mb-4">
+    <h1 className="text-[#09090b] font-bold text-xl dark:text-[#fafafa] mb-2">
+      {pjTitle}
+    </h1>
+
+    <div className="mb-4">
+      <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">
+        {pjStacks.map((stack: string, index: number) => (
+          <span key={index}>
+            {stack}
+            {index < pjStacks.length - 1 && " + "}
+          </span>
+        ))}
+      </p>
     </div>
+  </div>
+
+  <div className="mb-6">
+    <p className="text-gray-600 dark:text-[#f1f1f1] leading-relaxed text-[15px]">
+      {pjBio}
+    </p>
+  </div>
+
+  {/* View Project Button */}
+  <div className="flex gap-3 pt-2">
+    <button className="text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-300 
+      hover:text-[#fafafa]"
+    >
+      <a
+        href={liveUrl}
+        className="font-medium transition-all duration-300 group-hover:underline"
+      >
+        View Project
+      </a>
+
+      <span className="pt-0.5 transition-transform duration-300 group-hover:translate-x-1">
+        <HiArrowUpRight className="text-lg" />
+      </span>
+    </button>
+  </div>
+</section>
+
   );
 };
 

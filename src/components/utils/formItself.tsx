@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaLocationArrow } from "react-icons/fa6";
 
 const FormItself = () => {
   const [formData, setFormData] = useState({
@@ -50,7 +51,7 @@ const FormItself = () => {
 
       const data = await res.json();
       if (data.success) {
-        setSuccessMessage("🎀 Message sent successfully!");
+        setSuccessMessage(" Message sent successfully!");
         setFormData({ name: "", email: "", message: "" });
         setFormErrors({});
         setTimeout(() => setSuccessMessage(""), 5000);
@@ -83,12 +84,13 @@ const FormItself = () => {
             Your Name
           </label>
           <input
-            className={`outline-[#636365] dark:bg-[#272727] p-2 border ${
-              formErrors.name ? "border-red-500" : "border-gray-300"
+            className={`p-2 border ${
+              formErrors.name && "border-red-500"
             } w-full`}
             type="text"
             name="name"
             id="name"
+            placeholder="Enter Your Name"
             value={formData.name}
             onChange={handleChange}
             required
@@ -100,9 +102,10 @@ const FormItself = () => {
             Email
           </label>
           <input
-            className={`outline-[#636365] dark:bg-[#272727] p-2 border ${
-              formErrors.email ? "border-red-500" : "border-gray-300"
+            className={` p-2 border ${
+              formErrors.email && "border-red-500"
             } w-full`}
+                        placeholder="Enter Your Email"
             type="email"
             name="email"
             id="email"
@@ -117,10 +120,11 @@ const FormItself = () => {
             Message
           </label>
           <textarea
-            className={`outline-[#636365] dark:bg-[#272727] p-2 border ${
-              formErrors.message ? "border-red-500" : "border-gray-300"
+            className={` p-2 border ${
+              formErrors.message && "border-red-500"
             } w-full h-24`}
             name="message"
+                                    placeholder="Table Your Idea"
             id="message"
             value={formData.message}
             onChange={handleChange}
@@ -132,12 +136,12 @@ const FormItself = () => {
           <button
             type="submit"
             disabled={loading}
-            className="bg-[#09090b] dark:bg-[#2b394d] button px-4 py-2 rounded-lg text-[#fafafa] disabled:opacity-50"
+            className="bg-[#09090b] dark:bg-[#1f2938] button px-4 py-2 rounded-full text-[#fafafa] disabled:opacity-50"
           >
             {loading ? (
               <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-white"></div>
-            ) : (
-              "Send Message"
+            ) : ( <div className="flex space-x-0.5">
+             <FaLocationArrow size={18} className="mt-1" /> <div>Send Message</div>  </div>
             )}
           </button>
         </div>

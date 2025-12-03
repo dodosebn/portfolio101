@@ -1,9 +1,9 @@
-import pjMaps from '@/Projects/pjEasyAdd';
-import PjCont from '@/Projects/projCont';
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-
 import type { Variants } from "framer-motion";
+
+import pjMaps from "@/Projects/pjEasyAdd";
+import PjCont from "@/Projects/projCont";
 
 // ✅ Type the variants correctly
 const cardVariants: Variants = {
@@ -18,25 +18,31 @@ const cardVariants: Variants = {
     },
   }),
 };
-export const Route = createFileRoute('/projects')({
-  component: RouteComponent,
-})
 
-function RouteComponent() {
-  return     <div className="p-4 lg:px-16">
-      <main className="grid grid-cols-1 md:grid-cols-2 gap-6">
+export function Projects() {
+  return (
+    <div className="p-4" id="Projects">
+      <h1 className="dark:text-[#fafafa] text-2xl lg:text-3xl text-center py-7 mx-auto ">
+        Few Collections of My Works🚀
+      </h1>
+      <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {pjMaps.length > 0 ? (
           pjMaps.map((pj, i) => (
             <motion.div
               key={pj.id}
-              className="shadow-custom py-4 dark:border-[1.2px] border-[#fafafa]"
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              custom={i} // passes the index to the variant function
+              custom={i}
             >
-              <PjCont {...pj} />
+              <PjCont
+                pjTitle={pj.pjTitle}
+                pjBio={pj.pjBio}
+                pjStacks={pj.pjStacks}
+                liveUrl={pj.liveUrl}
+                // Add any other props that pjMaps items might have
+              />
             </motion.div>
           ))
         ) : (
@@ -46,4 +52,5 @@ function RouteComponent() {
         )}
       </main>
     </div>
+  );
 }

@@ -9,8 +9,8 @@ export function ThemeToggle() {
 
   return (
       <div
-        className='dark:border-[#e5e7eb] border border-[#1f2937]
-         dark:text-[#fafafa] px-3 py-2 rounded-sm shadow-sm'
+        className='dark:border-[#e5e7eb] 
+         dark:text-[#fafafa] px-3 py-2 rounded-sm '
       >
     <button type="button" onClick={toggleTheme}>
       {theme === "light" ? (

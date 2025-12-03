@@ -1,20 +1,27 @@
 import { createFileRoute } from '@tanstack/react-router'
-import {MainInfoHolder, StackHolderProfile} from '@/components'
+import Hero from '@/components/hero'
+import Home from '@/components/home'
+import AboutMe from '@/components/aboutMe'
+import { Projects } from './projects'
+import ContactMe from '@/HireMe/contactMe'
+import QuickAnimaB4Projects from '@/components/quickAnimaB4Projects'
 
 
 export const Route = createFileRoute('/')({
   component: App,
 })
-
 function App() {
   return (
-     <div className="py-1 p-4 lg:px-16">
-      <div className="lg:flex">
-        <StackHolderProfile />
-        <div className="flex-1 bottom-10 relative lg:bottom-[4.2rem] lg:left-8">
-          <MainInfoHolder />
-        </div>
-      </div>
-    </div>
-  )
-}
+    <div  className="relative lg:px-16 lg:w-full max-w-[1500px] flex flex-col 
+      justify-center mx-auto">
+
+  <Hero />
+  <Home/>
+  <AboutMe />
+  <QuickAnimaB4Projects />
+  <Projects />
+        <ContactMe />
+
+  {/* <ProjectImageView /> */}
+  </div>)
+ }

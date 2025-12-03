@@ -1,56 +1,42 @@
 import ImButton from "./customs/imButton";
-import ContactIcons from "./customs/contactIcons";
 import { FaBookReader } from "react-icons/fa";
 import { TbMessages } from "react-icons/tb";
-import ProjectsHolder from "./projectsHolder";
 import TransitionLink from "./utils/transitionLink";
 
 const MainInfoHolder = () => {
   return (
-    <div className="lg:text-start lg:relative lg:items-start text-center pt-[4.5rem]">
-      <section>
-        <h1 className="text-red-600 dark:text-[#fafafa] font-bold">
-          ORJI DOMINION
+    <div className="text-center pt-16 md:pt-20">
+      <section className="space-y-2">
+        <h1 className="text-black text-3xl dark:text-[#f1f1f1] font-bold">
+          Hey, I'm Orji Dominion.
         </h1>
-        <h3
-          className="text-red-950 font-bold text-xl inline-block relative
-           dark:text-transparent bg-clip-text dark:bg-gradient-to-r dark:from-[#5d453b]
-            dark:via-[#4d453b]
-               dark:to-[#fff] "
-        >
-          Your next Frontend Developer
-        </h3>
-        <p>
-          I specialize in writing clean code, bringing elegant user interfaces
-          to life, enhancing user experience, and staying up-to-date with modern
-          trends to remain relevant.
-        </p>
-      </section>
-      <section
-        className="p-[1rem] flex justify-center lg:relative right-3
-       lg:justify-start gap-[0.35rem] md:gap-[1rem] button"
-      >
-        <TransitionLink href={"/HireMe"}>
-          <ImButton name="Hire Me" icon={TbMessages} />
-        </TransitionLink>
-        <TransitionLink
-          href={
-            "/doc/Orji-Dominion-Resume.pdf"
-          }
-        >
-          <ImButton name="View my Resume" icon={FaBookReader} />
-        </TransitionLink>
-      </section>
-      <section>
-        <h3 className="text-red-950 text-lg dark:text-[#61584c]">
-          Reach out to to me via any of the below!
-        </h3>
-        <div className="flex gap-4 justify-center pt-[0.4rem] lg:justify-start">
-          <ContactIcons />
+
+<h3
+  className="italic font-bold text-xl inline-block
+    bg-linear-to-r from-[#FFD700] via-[#FFA500] to-[#FF8C00] bg-clip-text text-transparent"
+>
+  Your next Software Developer
+</h3>
+
+
+        <div className="flex md:justify-center justify-start px-4">
+          <p className="leading-7 max-w-xl md:text-center text-start">
+            I specialize in writing clean code, bringing elegant user interfaces to life,
+            enhancing user experience, and creating innovative solutions.
+          </p>
         </div>
       </section>
-      <section className="pt-3">
-        <ProjectsHolder />
+
+      <section
+        className="p-4 flex justify-center gap-[0.35rem] md:gap-4"
+      >
+        <TransitionLink href={"#Contact"}>
+          <ImButton name="Hire Me" icon={TbMessages} />
+        </TransitionLink>
+
+        <a href="public/doc/Orji-Dominion-Resume.pdf" target="_blank">
+          <ImButton name="View Resume" icon={FaBookReader} />
+        </a>
       </section>
     </div>
   );

@@ -1,24 +1,20 @@
-
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
 @import 'tailwindcss';
 
 
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-background: #ffffff;
+  
+  --color-background: #f7f7f7da;
   --color-foreground: #171717;
   --color-light: hsl(233, 26%, 24%);
-  --color-background-dark: #0a0a0a;
+  --color-background-dark: #131313;
   --color-foreground-dark: #e5e5e5;
   --color-dark: #e8e8e8;
 
-  --font-sans: "Open Sans", sans-serif;
-  --font-heading: "Roboto", sans-serif;
-  --font-display: "Montserrat", "Playfair", sans-serif;
+  --font-sans: 'Cabin', sans-serif;
+
 }
 
 :root {
@@ -31,6 +27,8 @@
   --background: var(--color-background-dark);
   --foreground: var(--color-foreground-dark);
   --color: var(--color-dark);
+background-image: url('/imgs/lines.svg');
+    background-blend-mode: overlay;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -49,6 +47,8 @@ body {
   transition-property: opacity, background, transform, filter, color;
   transition-timing-function: ease-in-out;
   transition-duration: 500ms;
+background-image: url('/imgs/lines.svg');
+  background-blend-mode: overlay;
 }
 
 .page-transition {
@@ -61,10 +61,6 @@ body {
 
 
 @layer components {
-  .logo-container {
-    font-family: "Montserrat", "Playfair", sans-serif;
-    font-size: 2.25rem;
-  }
 
   @keyframes gradient-x {
     0% {
@@ -95,6 +91,19 @@ body {
     background-size: 200% 200%;
     animation: gradientAnimation 10s ease infinite;
   }
+
+.experience-list li {
+  margin-bottom: 1rem;        
+  line-height: 1.8;           
+  font-weight: 600;           
+  padding-left: 0.5rem;       
+}
+
+.experience-list {
+  list-style-position: outside; 
+}
+
+
 
   h1,
   h2,

@@ -34,6 +34,6 @@ export interface pjProps {
   pjBio: string
   pjStacks: Array<string>
   // No StaticImageData — just use string (URL or import path)
-  pjPics: string
+  // pjPics: string
   liveUrl: string
 }

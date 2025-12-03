@@ -1,6 +1,6 @@
 import { MdAddIcCall } from "react-icons/md";
 import { IoMdMailUnread } from "react-icons/io";
-import { FaLocationDot } from "react-icons/fa6";
+import { FaLocationDot, FaWhatsapp } from "react-icons/fa6";
 import { ContactDetail } from "@/types";
 
 const ContactDetails: ContactDetail[] = [
@@ -19,6 +19,12 @@ const ContactDetails: ContactDetail[] = [
     content: 'Abakaliki, Nigeria',
     logo: FaLocationDot,
   },
+  {
+    id: 4,
+    content: 'Whatsapp Me',
+    logo: FaWhatsapp 
+
+  }
 ];
 
 export default ContactDetails;

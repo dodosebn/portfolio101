@@ -24,7 +24,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="bg-white text-black dark:dark-gradient dark:text-[#d9d9d9]">
+      <body className="bg-white text-black dark:dark-gradient dark:text-[#d9d9d9]" >
         <ThemeProvider>
           <div className="p-6 lg:px-16">
             <Navigations />
