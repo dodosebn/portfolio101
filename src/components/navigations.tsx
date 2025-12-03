@@ -42,11 +42,13 @@ const Navigations = () => {
       </button>
 
       <div className="hidden md:flex items-center gap-4">
-        <ul className="flex flex-row gap-6 navbar dark:border-[#e5e7eb] p-3 rounded-sm shadow-sm whitespace-nowrap">
+        <ul className="flex flex-row gap-6 navbar
+         dark:border-[#e5e7eb] p-3 rounded-sm whitespace-nowrap">
           {NavLinks.map((link) => (
             <li
               key={link.name}
-              className="text-[#565f6e] dark:text-gray-300 hover:text-black dark:hover:text-white transition-all"
+              className=" dark:text-gray-300
+               hover:text-black dark:hover:text-white transition-all"
             >
               <Link to={link.href}>{link.name}</Link>
             </li>
@@ -54,14 +56,13 @@ const Navigations = () => {
         </ul>
       </div>
 
-      {/* Desktop Theme Toggle */}
       <div className="hidden md:flex">
         <ThemeToggle />
       </div>
 
       {mobileMenuOpen && (
-        <div className="w-full pt-5 shadow-md md:hidden">
-          <ul className="flex gap-3 px-3 pb-2 dark:text-gray-200 text-gray-700">
+        <div className="w-full pt-5  md:hidden">
+          <ul className="flex gap-3 px-3 pb-2 dark:text-gray-200">
             {mobileNavLinks.map((item, index) => (
               <li key={index}>
                 <Link

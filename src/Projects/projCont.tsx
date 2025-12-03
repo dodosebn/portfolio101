@@ -11,11 +11,11 @@ const PjCont: React.FC<pjProps> = ({
 }) => {
   return (
  <section
-  className="relative bg-white dark:bg-[#151515] hover:bg-black/90 rounded-md shadow-lg 
+  className="relative bg-[#f8f8f8] hover:bg-white/90 dark:bg-[#151515] dark:hover:bg-black/90 rounded-md shadow-lg 
   hover:shadow-xl transition-all duration-300 p-6 border border-gray-400 dark:border-gray-700 
   group w-full h-[320px] flex flex-col justify-between"
 >
-  <span className="absolute bottom-0 left-0 w-80 h-[3px] rounded-full bg-white dark:bg-[#d8d2d2] 
+  <span className="absolute bottom-0 left-0 w-80 h-[3px] rounded-full bg-black/90 dark:bg-white dark:bg-[#d8d2d2] 
     scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
 
   <div className="mb-4">

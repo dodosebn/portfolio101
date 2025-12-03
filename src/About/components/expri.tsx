@@ -10,7 +10,7 @@ const Expri: React.FC = () => {
   return (
     <div className="my-4 px-5 md:px-3">
       <div>
-        <section className="border border-l-2 border-black">
+        <section>
           <h1 className="text-2xl font-[650] pb-3">Experience</h1>
 
           <div className="space-y-4">

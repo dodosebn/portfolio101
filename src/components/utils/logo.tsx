@@ -6,12 +6,12 @@ const Logo = () => {
     <div className="logo-container relative inline-block cursor-pointer">
       <div className="flex gap-1 items-center">
         <a href="public/doc/Orji-Dominion-Resume.pdf" target="_blank">
-          <IoDocumentTextOutline size={19} className="text-[#FFA500] transition" />
+          <IoDocumentTextOutline size={19} className="dark:text-[#FFA500] text-[#f1c40f] transition" />
         </a>
 
         <Link
           to="/"
-          className="text-[17px] font-bold text-gray-300"
+          className="text-[17px] font-bold dark:text-gray-300 "
         >
           Dominion
         </Link>
