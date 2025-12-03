@@ -43,8 +43,9 @@ const PjCont: React.FC<pjProps> = ({
 
   {/* View Project Button */}
   <div className="flex gap-3 pt-2">
-    <button className="text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-300 
-      hover:text-[#fafafa]"
+    <button className="dark:text-white text-black px-4 py-2 rounded-lg flex items-center
+     gap-2 transition-all duration-300 
+      dark:hover:text-[#fafafa]"
     >
       <a
         href={liveUrl}

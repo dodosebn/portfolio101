@@ -52,7 +52,7 @@ const ContactMe: React.FC = () => {
                 custom={index}
                 variants={cardVariants}
                 className={`flex gap-2 p-2 items-center ${
-                  isWhatsApp && "bg-green-800 rounded-full w-40 text-center"
+                  isWhatsApp && "bg-green-800 text-white  rounded-full w-40 text-center"
                 }`}
               >
                 <item.logo />
