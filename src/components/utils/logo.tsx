@@ -7,7 +7,7 @@ const Logo = () => {
       <div className="flex items-center gap-2">
         {/* Resume Icon */}
         <a
-          href="/doc/Orji-Dominion-Resume.pdf"
+          href="/doc/Orji-Dominion-resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="p-1 rounded-full hover:bg-yellow-100 dark:hover:bg-yellow-900 transition-all duration-300"
