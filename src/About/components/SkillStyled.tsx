@@ -63,18 +63,20 @@ const SkillStyled = () => {
           name: 'Supabase',
           icon: RiSupabaseFill
         },
+            {icon: FaReact, name: 'Tanstack Start', id: 11},
+        
         {
-          id: 11,
+          id: 12,
           name: 'Node Js',
           icon: IoLogoNodejs
         }, 
         {
-          id: 12,
+          id: 13,
           name: 'Docker',
           icon:  FaDocker
         },
         {
-          id: 13,
+          id: 14,
           name: 'Firebase',
           icon:SiFirebase    
           

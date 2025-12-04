@@ -79,14 +79,15 @@ const FormItself = () => {
         onSubmit={handleSubmit}
         className={`${successMessage ? "hidden" : "block"} space-y-2`}
       >
+        {/* Name Input */}
         <div className="flex flex-col">
           <label htmlFor="name" className="text-start">
             Your Name
           </label>
           <input
-            className={`p-2 border ${
-              formErrors.name && "border-red-500"
-            } w-full`}
+            className={`p-2 w-full border rounded-md placeholder-gray-500 dark:placeholder-gray-400
+              ${formErrors.name ? "border-red-500" : "border-gray-300 dark:border-gray-600"}
+              focus:outline-none focus:ring-1 transition-all`}
             type="text"
             name="name"
             id="name"
@@ -102,13 +103,13 @@ const FormItself = () => {
             Email
           </label>
           <input
-            className={` p-2 border ${
-              formErrors.email && "border-red-500"
-            } w-full`}
-                        placeholder="Enter Your Email"
+            className={`p-2 w-full border rounded-sm placeholder-gray-500 dark:placeholder-gray-400
+              ${formErrors.email ? "border-red-500" : "border-gray-300 dark:border-gray-600"}
+              focus:outline-none focus:ring-1 transition-all`}
             type="email"
             name="email"
             id="email"
+            placeholder="Enter Your Email"
             value={formData.email}
             onChange={handleChange}
             required
@@ -120,28 +121,32 @@ const FormItself = () => {
             Message
           </label>
           <textarea
-            className={` p-2 border ${
-              formErrors.message && "border-red-500"
-            } w-full h-24`}
+            className={`p-2 w-full rounded-sm h-24 border placeholder-gray-500 dark:placeholder-gray-400
+              ${formErrors.message ? "border-red-500" : "border-gray-300 dark:border-gray-600"}
+              focus:outline-none focus:ring-1 transition-all`}
             name="message"
-                                    placeholder="Table Your Idea"
             id="message"
+            placeholder="Table Your Idea"
             value={formData.message}
             onChange={handleChange}
             required
           ></textarea>
         </div>
 
+        {/* Submit Button */}
         <div className="pt-2 flex items-start">
           <button
             type="submit"
             disabled={loading}
-            className="bg-[#09090b] dark:bg-[#1f2938] button px-4 py-2 rounded-full text-[#fafafa] disabled:opacity-50"
+            className="bg-[#09090b] dark:bg-[#1f2938] px-4 py-2 rounded-full text-[#fafafa] disabled:opacity-50 flex items-center space-x-1"
           >
             {loading ? (
               <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-white"></div>
-            ) : ( <div className="flex space-x-0.5">
-             <FaLocationArrow size={18} className="mt-1" /> <div>Send Message</div>  </div>
+            ) : (
+              <>
+                <FaLocationArrow size={18} className="mt-1" />
+                <div>Send Message</div>
+              </>
             )}
           </button>
         </div>

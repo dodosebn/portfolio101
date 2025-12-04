@@ -24,6 +24,7 @@ const AboutAnima: React.FC<StackAnimaProps> = ({ className }) => {
     { component: RiTailwindCssFill, name: 'TailwindCSS' },
     { component: FaReact, name: 'React' },
     { component: SiNextdotjs, name: 'Next JS' },
+    {component: FaReact, name: 'Tanstack Start'},
     { component: FaGithub, name: 'GitHub' },
     {component: IoLogoNodejs, name: 'Node JS'},
     {component: FaDocker, name: 'Docker'},

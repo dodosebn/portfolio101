@@ -24,7 +24,9 @@ const Navigations = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/90 dark:bg-[#151515]/90 shadow-md lg:px-16 flex justify-between items-center max-w-[1500px] mx-auto p-3">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-[#f8f8f8]/90
+     dark:bg-[#151515]/90  lg:px-16 flex justify-between
+      items-center max-w-[1500px] mx-auto p-2">
 
       <div className={mobileMenuOpen ? "hidden md:block" : "block"}>
         <Logo />
