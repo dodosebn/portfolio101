@@ -5,7 +5,6 @@ import type { Variants } from "framer-motion";
 import pjMaps from "@/Projects/pjEasyAdd";
 import PjCont from "@/Projects/projCont";
 
-// ✅ Type the variants correctly
 const cardVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: (custom: number) => ({
