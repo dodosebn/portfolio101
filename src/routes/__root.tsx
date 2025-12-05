@@ -12,15 +12,26 @@ export const Route = createRootRoute({
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Orji Dominion | Software Developer" },
 
+      // Normal SEO description
+      {
+        name: "description",
+        content:
+          "I'm Orji Dominion, a software engineer crafting fast, intuitive apps with React, TanStack Start, and full-stack technologies.",
+      },
+
+      // ------- OPEN GRAPH (WhatsApp, LinkedIn, Facebook) -------
       { property: "og:title", content: "Orji Dominion | Software Developer" },
       {
         property: "og:description",
-        content: "I'm Orji Dominion, a software engineer focused on crafting fast and intuitive web apps with React, TanStack Start, and full-stack tools. Explore my work",
+        content:
+          "I'm Orji Dominion, a software engineer crafting fast, intuitive apps with React, TanStack Start, and full-stack technologies. Explore my work.",
       },
       {
         property: "og:image",
         content: "https://orji-dominion.vercel.app/imgs/dominion.jpg",
       },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { property: "og:url", content: "https://orji-dominion.vercel.app/" },
       { property: "og:type", content: "website" },
 
@@ -29,7 +40,7 @@ export const Route = createRootRoute({
       {
         name: "twitter:description",
         content:
-          "I'm Orji Dominion, a software engineer focused on crafting fast and intuitive web apps with React, TanStack Start, and full-stack tools. Explore my work",
+          "I'm Orji Dominion, a software engineer crafting fast, intuitive apps with React, TanStack Start, and full-stack technologies. Explore my work.",
       },
       {
         name: "twitter:image",
