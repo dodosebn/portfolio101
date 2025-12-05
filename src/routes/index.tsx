@@ -5,6 +5,7 @@ import AboutMe from '@/components/aboutMe'
 import { Projects } from './projects'
 import ContactMe from '@/HireMe/contactMe'
 import QuickAnimaB4Projects from '@/components/quickAnimaB4Projects'
+import CusorWrite from '@/components/cursorWrite'
 
 
 export const Route = createFileRoute('/')({
@@ -12,9 +13,9 @@ export const Route = createFileRoute('/')({
 })
 function App() {
   return (
+    <>
     <div  className="relative lg:px-16 lg:w-full max-w-[1500px] flex flex-col 
       justify-center mx-auto">
-
   <Hero />
   <Home/>
   <AboutMe />
@@ -23,5 +24,5 @@ function App() {
         <ContactMe />
 
   {/* <ProjectImageView /> */}
-  </div>)
+  </div></>)
  }
