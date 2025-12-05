@@ -12,14 +12,12 @@ export const Route = createRootRoute({
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Orji Dominion | Software Developer" },
 
-      // Normal SEO description
       {
         name: "description",
         content:
           "I'm Orji Dominion, a software engineer crafting fast, intuitive apps with React, TanStack Start, and full-stack technologies.",
       },
 
-      // ------- OPEN GRAPH (WhatsApp, LinkedIn, Facebook) -------
       { property: "og:title", content: "Orji Dominion | Software Developer" },
       {
         property: "og:description",
