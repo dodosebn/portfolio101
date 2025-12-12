@@ -7,7 +7,7 @@ const Logo = () => {
       <div className="flex items-center gap-2">
         {/* Resume Icon */}
         <a
-          href="/doc/Orji-Dominion-resume.pdf"
+          href={`${process.env.PUBLIC_URL}/doc/OrjiDominion.pdf`}
           target="_blank"
           rel="noopener noreferrer"
           className="p-1 rounded-full hover:bg-yellow-100 dark:hover:bg-yellow-900 transition-all duration-300"
