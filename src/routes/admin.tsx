@@ -1,45 +1,81 @@
+import supabase from '@/lib/supabase'
 import { createFileRoute } from '@tanstack/react-router'
-import { useEffect, useState } from 'react';
-
+import { useEffect, useState } from 'react'
 export const Route = createFileRoute('/admin')({
   component: RouteComponent,
 })
 
+type Visitor = {
+  id: string
+  city: string
+  region: string
+  country: string
+  visited_at: string
+}
+
 function RouteComponent() {
-  const [userLocation, setUserLocation] = useState<{ city: string; region: string; country: string } | null>(null);
-  const FetchUserApi = async () => {
-    try{
-    const response = await fetch("https://ipinfo.io/json?token=5c6ea39b920f38")
-    const data = await response.json();
-    setUserLocation(data)
-  }catch(err){
-    console.error('Error Fetching location : ', err)
+  const [visitors, setVisitors] = useState<Visitor[]>([])
+  const [loading, setLoading] = useState(true)
+
+  // Fetch visitors from Supabase
+  const fetchVisitors = async () => {
+    const { data, error } = await supabase
+      .from('visitor_locations')
+      .select('*')
+      .order('visited_at', { ascending: false })
+
+    if (error) {
+      console.error('Error fetching visitors:', error)
+    } else {
+      setVisitors(data ?? [])
+    }
+
+    setLoading(false)
   }
-}
-useEffect(() => {
-  FetchUserApi();
-}, [])
-const keys = ['city', 'region', 'country'] as const;
 
-  return <div className='pt-60'> <p>Hello "/admin"!</p>
+  const saveVisit = async () => {
+    try {
+      const response = await fetch('https://ipinfo.io/json?token=5c6ea39b920f38')
+      const location = await response.json()
 
-    <div>
-{
-  userLocation ? (
-    <div>
-      <ul>
-        {keys.map(item => (
-          <li><span className='capitalize'>{item} : </span>
-          {userLocation[item]}</li>
-        ))
-        }
+      const { error } = await supabase.from('visitor_locations').insert({
+        city: location.city,
+        region: location.region,
+        country: location.country,
+      })
 
-      </ul>
+      if (error) throw error
+
+      fetchVisitors()
+    } catch (err) {
+      console.error('Error saving visit:', err)
+    }
+  }
+
+  useEffect(() => {
+    saveVisit()
+  }, [])
+
+  return (
+    <div className="pt-60">
+      <p>Hello "/admin"!</p>
+
+      <div>
+        {loading ? (
+          <p>Loading visitors...</p>
+        ) : (
+          <ul>
+            {visitors.map(v => (
+              <li key={v.id} className="capitalize">
+                {v.city}, {v.region}, {v.country}
+                <span className="ml-2 text-sm text-gray-400">
+                  {new Date(v.visited_at).toLocaleString()}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
-  ): (
-    <p>Loading Location .....</p>
   )
-}
-    </div>
-  </div>
 }
