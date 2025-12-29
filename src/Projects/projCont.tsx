@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoIosLink } from "react-icons/io";
 import type { pjProps } from "@/types";
 import { HiArrowUpRight } from "react-icons/hi2";
+import { Link } from "@tanstack/react-router";
+import { PjLinks } from "./pjLinks";
 
 const PjCont: React.FC<pjProps> = ({
   pjTitle,
@@ -9,11 +11,12 @@ const PjCont: React.FC<pjProps> = ({
   pjStacks,
   liveUrl,
 }) => {
+  const [Loading, setLoading] = useState(false);
   return (
  <section
   className="relative bg-[#f8f8f8] hover:bg-white/90 dark:bg-[#151515] dark:hover:bg-black/90 rounded-md shadow-lg 
   hover:shadow-xl transition-all duration-300 p-6 border border-gray-400 dark:border-gray-700 
-  group w-full h-[320px] flex flex-col justify-between"
+  group w-full h-80 flex flex-col justify-between"
 >
   <span className="absolute bottom-0 left-0 w-80 h-[3px] rounded-full bg-black/90 dark:bg-white dark:bg-[#d8d2d2] 
     scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
@@ -47,12 +50,7 @@ const PjCont: React.FC<pjProps> = ({
      gap-2 transition-all duration-300 
       dark:hover:text-[#fafafa]"
     >
-      <a
-        href={liveUrl}
-        className="font-medium transition-all duration-300 group-hover:underline"
-      >
-        View Project
-      </a>
+    <PjLinks url={liveUrl} />
 
       <span className="pt-0.5 transition-transform duration-300 group-hover:translate-x-1">
         <HiArrowUpRight className="text-lg" />
