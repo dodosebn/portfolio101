@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { IoIosLink } from "react-icons/io";
+import React from "react";
 import type { pjProps } from "@/types";
 import { HiArrowUpRight } from "react-icons/hi2";
-import { Link } from "@tanstack/react-router";
 import { PjLinks } from "./pjLinks";
 
 const PjCont: React.FC<pjProps> = ({
@@ -11,7 +9,6 @@ const PjCont: React.FC<pjProps> = ({
   pjStacks,
   liveUrl,
 }) => {
-  const [Loading, setLoading] = useState(false);
   return (
  <section
   className="relative bg-[#f8f8f8] hover:bg-white/90 dark:bg-[#151515] dark:hover:bg-black/90 rounded-md shadow-lg 

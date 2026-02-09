@@ -15,14 +15,13 @@ const MainInfoHolder = () => {
   className="italic font-bold text-xl inline-block
     bg-linear-to-r from-[#FFD700] via-[#FFA500] to-[#FF8C00] bg-clip-text text-transparent"
 >
-  Your next Software Developer
+  Your next Web Developer
 </h3>
 
 
         <div className="flex md:justify-center justify-start px-4">
-          <p className="leading-7 max-w-xl md:text-center text-start">
-            I specialize in writing clean code, bringing elegant user interfaces to life,
-            enhancing user experience, and creating innovative solutions.
+          <p className=" max-w-xl md:text-center text-start leading-8">
+           Building fast, scalable web apps with clean code, smooth UI, and solid backend architecture.
           </p>
         </div>
       </section>
