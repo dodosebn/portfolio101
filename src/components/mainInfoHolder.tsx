@@ -20,7 +20,7 @@ const MainInfoHolder = () => {
 
 
         <div className="flex md:justify-center justify-start px-4">
-          <p className=" max-w-xl md:text-center text-start leading-8">
+          <p className=" max-w-xl text-center leading-8">
            Building fast, scalable web apps with clean code, smooth UI, and solid backend architecture.
           </p>
         </div>

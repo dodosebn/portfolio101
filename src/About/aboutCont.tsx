@@ -1,9 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { createFileRoute } from "@tanstack/react-router";
 import type { Variants } from "framer-motion";
 import AboutMeMain from "./components/aboutMeMain";
-import AboutAnima from "./components/aboutAnima";
 import SkillStyled from "./components/SkillStyled";
 import Expri from "./components/expri";
 

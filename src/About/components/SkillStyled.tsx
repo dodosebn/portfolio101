@@ -10,6 +10,8 @@ import { IoLogoCss3 } from "react-icons/io";
 import { FaHtml5 } from "react-icons/fa";
 import { IoLogoNodejs } from "react-icons/io";
 import { FaDocker } from "react-icons/fa";
+import { SiExpress } from "react-icons/si";
+import { SiPrisma } from "react-icons/si";
 
 const SkillStyled = () => {
    const stacks =  [
@@ -80,6 +82,15 @@ const SkillStyled = () => {
           name: 'Firebase',
           icon:SiFirebase    
           
+        },
+        {
+          id: 15,
+          name: 'Express',
+          icon: SiExpress
+        },
+        {          id: 16,
+          name: 'Prisma',
+          icon: SiPrisma
         }
     ]
   return (
