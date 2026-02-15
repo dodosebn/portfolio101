@@ -5,7 +5,6 @@ import AboutMe from '@/components/aboutMe'
 import { Projects } from './projects'
 import ContactMe from '@/HireMe/contactMe'
 import QuickAnimaB4Projects from '@/components/quickAnimaB4Projects'
-import CusorWrite from '@/components/cursorWrite'
 
 
 export const Route = createFileRoute('/')({
