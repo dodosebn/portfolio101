@@ -5,9 +5,10 @@ import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 import { nitroV2Plugin } from '@tanstack/nitro-v2-vite-plugin'
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 const config = defineConfig({
   plugins: [
-    nitroV2Plugin(),
     // this is the plugin that enables path aliases
     viteTsConfigPaths({
       projects: ['./tsconfig.json'],
@@ -15,6 +16,11 @@ const config = defineConfig({
     tailwindcss(),
     tanstackStart(),
     viteReact(),
+    cloudflare({
+      viteEnvironment: {
+        name: "ssr"
+      }
+    }),
   ],
    base: '/',
 })
