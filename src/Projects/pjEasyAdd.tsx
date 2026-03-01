@@ -13,6 +13,32 @@ const pjMaps = [
       "Framer Motion",
     ],
   },
+   {
+    id: 2,
+    liveUrl: "https://file-converter-rho.vercel.app/",
+    pjTitle: "File Converter",
+    pjBio:
+      "The Most secured file converter. Transform images, documents, and media files with just a few clicks. No software installation required.",
+    pjStacks: [
+      "React",
+      "Tailwind",
+      "Express",
+      "Docker",
+      "LibreOffice",
+    ],
+  },
+    {
+    id: 4,
+    liveUrl: "https://mind-bloom.pxxl.click/",
+    pjTitle: "Mind Bloom",
+    pjBio:
+      "A gentle companion for young hearts learning to understand their feelings. Here, every emotion is valid, every thought matters, and you're never alone",
+    pjStacks: [
+      "Html",
+      "Css",
+      "Javascript"
+    ],
+  },
   {
     id: 1,
     liveUrl: "https://farmculator.vercel.app/",

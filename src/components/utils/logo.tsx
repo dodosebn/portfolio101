@@ -4,8 +4,7 @@ import { IoDocumentTextOutline } from "react-icons/io5";
 const Logo = () => {
   return (
     <div className="logo-container inline-block cursor-pointer">
-      <div className="flex items-center gap-2">
-        {/* Resume Icon */}
+      <div className="flex items-center gap-1">
         <a
           href={`/doc/OrjiDominion.pdf`}
           target="_blank"
@@ -18,16 +17,15 @@ const Logo = () => {
           />
         </a>
 
-        {/* Logo Text with Gradient */}
         <Link
           to="/"
-          className="text-[17px] uppercase font-bold 
+          className="text-[17px]  font-bold 
                      bg-gradient-to-r from-green-500 via-green-400 to-yellow-400 
                      dark:from-green-400 dark:via-green-500 dark:to-yellow-500
                      bg-clip-text text-transparent
                      transition-all duration-300 transform hover:scale-105"
         >
-          Dominion
+          Technically Dominion
         </Link>
       </div>
     </div>

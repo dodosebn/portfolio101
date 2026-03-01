@@ -1,26 +1,26 @@
 import { useState } from "react"; 
-import { IoBuild, IoMoonOutline } from "react-icons/io5";
-import { MdOutlineConnectWithoutContact, MdOutlineWbSunny } from "react-icons/md";
+import { IoBuild } from "react-icons/io5";
+import { MdOutlineConnectWithoutContact } from "react-icons/md";
 import { BiMenuAltRight, BiX } from "react-icons/bi";
-import { useTheme } from "./themeProvider";
+// import { useTheme } from "./themeProvider";
 import Logo from "./utils/logo";
-import { ThemeToggle } from "./customs/useTheme";
-import { Link } from "@tanstack/react-router";
-import { RiHome5Fill } from "react-icons/ri";
+// import { ThemeToggle } from "./customs/useTheme";
+
+// import { RiHome5Fill } from "react-icons/ri";
 import { FaCode, FaUserAstronaut } from "react-icons/fa6";
 
 export const clientOnly = true;
 
 const Navigations = () => {
-  const { theme, toggleTheme } = useTheme();
+  // const { theme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const NavLinks = [
-    { name: "Home", href: "/", icon: <RiHome5Fill size={20} /> },
-    { name: "About", href: "#About", icon: <FaUserAstronaut size={20} /> },
-    { name: "Skills", href: "#Skills" , icon: <IoBuild size={20} /> },
-    { name: "Projects", href: "#Projects", icon: <FaCode size={20} /> },
-    { name: "Contact", href: "#Contact", icon: <MdOutlineConnectWithoutContact size={20} /> },
+    // { name: "Home", href: "/", icon: <RiHome5Fill size={20} /> },
+    { name: "About", href: "/#About", icon: <FaUserAstronaut size={20} /> },
+    { name: "Skills", href: "/#Skills" , icon: <IoBuild size={20} /> },
+    { name: "Projects", href: "/#Projects", icon: <FaCode size={20} /> },
+    // { name: "Contact", href: "#Contact", icon: <MdOutlineConnectWithoutContact size={20} /> },
   ];
 
   return (
@@ -41,31 +41,51 @@ const Navigations = () => {
       </button>
 
       <div className="hidden md:flex items-center gap-4">
-        <ul className="flex flex-row gap-6 navbar dark:border-[#e5e7eb] p-3 rounded-sm whitespace-nowrap">
+        <ul className="flex flex-row gap-6 navbar dark:border-[#e5e7eb]
+         p-3 rounded-sm whitespace-nowrap">
           {NavLinks.map((link) => (
             <li
               key={link.name}
-              className="dark:text-gray-300 hover:text-black/90 dark:hover:text-white transition-all rounded-md"
+              className="dark:text-gray-300 hover:text-black/90 dark:hover:text-white 
+              transition-all rounded-md"
             >
-             <Link 
-  to={link.href} 
-  className="flex items-center gap-2 p-2 px-4
-     dark:hover:border-gray-700 hover:border hover:rounded-full
-     transition-all duration-100 "
->
-  <span className="text-xl">{link.icon}</span>
-  <span className="text-lg font-medium">{link.name}</span>
-</Link>
+             <a 
+               href={link.href} 
+               className="flex items-center gap-2 p-2 px-4
+                  dark:hover:border-gray-700 hover:border-b
+                  transition-all duration-100 "
+             >
+               <span className="text-xl">{link.icon}</span>
+               <span className="text-lg font-medium">{link.name}</span>
+             </a>
 
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="hidden md:flex">
+      {/* <div className="hidden md:flex">
         <ThemeToggle />
-      </div>
+      </div> */}
 
+        <div className="hidden md:flex flex-row gap-6 navbar dark:border-[#e5e7eb]
+         p-3 rounded-sm whitespace-nowrap">
+            <span
+              className="dark:text-gray-300 hover:text-black/90 dark:hover:text-white 
+              transition-all rounded-md"
+            >
+             <a 
+             href={'#Contact'}
+  className="flex items-center gap-2 p-2 px-4
+     dark:hover:border-gray-700 hover:border-b
+     transition-all duration-100 "
+>
+  <span className="text-xl"><MdOutlineConnectWithoutContact size={20} /></span>
+  <span className="text-lg font-medium">Contact</span>
+</a>
+
+            </span>
+        </div>
      
       <div
         className={`md:hidden absolute top-full left-0 w-full transition-all duration-300 overflow-hidden
@@ -79,36 +99,38 @@ const Navigations = () => {
           `}
         >
           {NavLinks.map((item, index) => (
-            <Link
+            <a
               key={index}
-              to={item.href}
+              href={item.href}
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center gap-4 p-4 transition-all border  
               border-gray-700/20 dark:border-gray-200/30"
             >
               <span className="text-xl">{item.icon}</span>
               <span className="text-lg font-medium">{item.name}</span>
-            </Link>
+            </a>
           ))}
 
-          <button
-            type="button"
-            onClick={toggleTheme}
-            className="flex items-center gap-4 p-4 transition-all border  
-            dark:border-gray-200/30 border-gray-700/20"
-          >
-            {theme === "light" ? (
-              <>
-                <IoMoonOutline size={22} />
-                <span className="text-lg">Dark Mode</span>
-              </>
-            ) : (
-              <>
-                <MdOutlineWbSunny size={28} />
-                <span className="text-lg">Light Mode</span>
-              </>
-            )}
-          </button>
+        <div className="flex flex-col">
+            <span
+              className="dark:text-gray-300 hover:text-black/90 dark:hover:text-white 
+              transition-all rounded-md"
+            >
+             <a 
+             href={'#Contact'}
+             onClick={() => setMobileMenuOpen(false)}
+  className="flex items-center gap-4 p-4 transition-all border  
+              border-gray-700/20 dark:border-gray-200/30
+     dark:hover:border-gray-700 
+     transition-all duration-100 "
+>
+  <span className="text-xl"><MdOutlineConnectWithoutContact size={20} /></span>
+  <span className="text-lg font-medium">Contact</span>
+</a>
+
+            </span>
+        </div>
+
         </div>
       </div>
     </nav>
