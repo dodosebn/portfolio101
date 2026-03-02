@@ -1,0 +1,140 @@
+import { useState } from "react";
+import { IoBuild } from "react-icons/io5";
+import { MdOutlineConnectWithoutContact } from "react-icons/md";
+import { BiMenuAltRight, BiX } from "react-icons/bi";
+import Logo from "./utils/logo";
+
+import { FaCode, FaUserAstronaut } from "react-icons/fa6";
+
+export const clientOnly = true;
+
+const Navigations = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const NavLinks = [
+    // { name: "Home", href: "/", icon: <RiHome5Fill size={20} /> },
+    { name: "About", href: "/#About", icon: <FaUserAstronaut size={20} /> },
+    { name: "Skills", href: "/#Skills", icon: <IoBuild size={20} /> },
+    { name: "Projects", href: "/#Projects", icon: <FaCode size={20} /> },
+    // { name: "Contact", href: "#Contact", icon: <MdOutlineConnectWithoutContact size={20} /> },
+  ];
+
+  return (
+    <nav
+      className="fixed top-0 left-0 w-full z-50 bg-[#f8f8f8]/90
+     dark:bg-[#151515]/90  lg:px-16 flex justify-between
+      items-center max-w-375 mx-auto p-2"
+    >
+      <div className={mobileMenuOpen ? "hidden md:block" : "block"}>
+        <Logo />
+      </div>
+
+      <button
+        type="button"
+        className="md:hidden p-2 z-50 relative"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+      >
+        {mobileMenuOpen ? <BiX size={32} /> : <BiMenuAltRight size={32} />}
+      </button>
+
+      <div className="hidden md:flex items-center gap-4">
+        <ul
+          className="flex flex-row gap-6 navbar dark:border-[#e5e7eb]
+         p-3 rounded-sm whitespace-nowrap"
+        >
+          {NavLinks.map((link) => (
+            <li
+              key={link.name}
+              className="dark:text-gray-300 hover:text-black/90 dark:hover:text-white 
+              transition-all rounded-md"
+            >
+              <a
+                href={link.href}
+                className="flex items-center gap-2 p-2 px-4
+                  dark:hover:border-gray-700 hover:border-b
+                  transition-all duration-100 "
+              >
+                <span className="text-xl">{link.icon}</span>
+                <span className="text-lg font-medium">{link.name}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* <div className="hidden md:flex">
+        <ThemeToggle />
+      </div> */}
+
+      <div
+        className="hidden md:flex flex-row gap-6 navbar dark:border-[#e5e7eb]
+         p-3 rounded-sm whitespace-nowrap"
+      >
+        <span
+          className="dark:text-gray-300 hover:text-black/90 dark:hover:text-white 
+              transition-all rounded-md"
+        >
+          <a
+            href={"#Contact"}
+            className="flex items-center gap-2 p-2 px-4
+     dark:hover:border-gray-700 hover:border-b
+     transition-all duration-100 "
+          >
+            <span className="text-xl">
+              <MdOutlineConnectWithoutContact size={20} />
+            </span>
+            <span className="text-lg font-medium">Contact</span>
+          </a>
+        </span>
+      </div>
+
+      <div
+        className={`md:hidden absolute top-full left-0 w-full transition-all duration-300 overflow-hidden
+        ${mobileMenuOpen ? "max-h-125 opacity-100" : "max-h-0 opacity-0"}
+        `}
+      >
+        <div
+          className={`px-6 flex flex-col gap-4 py-4 transition-all duration-500 
+          bg-white dark:bg-[#151515]
+          ${mobileMenuOpen ? "translate-y-0" : "-translate-y-3"}
+          `}
+        >
+          {NavLinks.map((item, index) => (
+            <a
+              key={index}
+              href={item.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-4 p-4 transition-all border  
+              border-gray-700/20 dark:border-gray-200/30"
+            >
+              <span className="text-xl">{item.icon}</span>
+              <span className="text-lg font-medium">{item.name}</span>
+            </a>
+          ))}
+
+          <div className="flex flex-col">
+            <span
+              className="dark:text-gray-300 hover:text-black/90 dark:hover:text-white 
+              transition-all rounded-md"
+            >
+              <a
+                href={"#Contact"}
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-4 p-4 transition-all border  
+              border-gray-700/20 dark:border-gray-200/30
+     dark:hover:border-gray-700 duration-100 "
+              >
+                <span className="text-xl">
+                  <MdOutlineConnectWithoutContact size={20} />
+                </span>
+                <span className="text-lg font-medium">Contact</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navigations;
