@@ -26,11 +26,11 @@ export const Route = createRootRoute({
       },
       {
         property: "og:image",
-        content: "https://orji-dominion.vercel.app/imgs/dominion.jpg",
+        content: "https://technicallydominion.vercel.app/imgs/dominion.jpg",
       },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:url", content: "https://orji-dominion.vercel.app/" },
+      { property: "og:url", content: "https://technicallydominion.vercel.app/" },
       { property: "og:type", content: "website" },
 
       { name: "twitter:card", content: "summary_large_image" },
@@ -42,7 +42,7 @@ export const Route = createRootRoute({
       },
       {
         name: "twitter:image",
-        content: "https://orji-dominion.vercel.app/imgs/dominion.jpg",
+        content: "https://technicallydominion.vercel.app/imgs/dominion.jpg",
       },
     ],
     links: [{ rel: "stylesheet", href: appCss }],
