@@ -3,7 +3,7 @@ export default [
   {
     "title": "Velvet Runtime Notes",
     "description": "Use color tokens to keep light and dark themes aligned.",
-    "pubDate": "2024-08-04T23:00:00.000Z",
+    "pubDate": "2024-08-05T00:00:00.000Z",
     "content": "Semantic tokens keep your UI stable while the brand evolves.\n\nInstead of hard-coding one-off colors in components, shape a small set of\nvariables and map all surfaces to those variables.\n\n## Why this matters\n\n- You can restyle the app in minutes instead of days\n- Light and dark themes stay behaviorally consistent\n- Add-on pages inherit your visual identity by default\n\n<MdxCallout title=\"MDX Component Demo\">\n  This callout is rendered from JSX inside an MDX post. It is useful for\n  release notes, warnings, and migration tips where you want stronger visual\n  emphasis than plain markdown blocks.\n</MdxCallout>\n\n<MdxMetrics\n  items={[\n    { label: 'Token count', value: '12 core vars' },\n    { label: 'Theme modes', value: 'light + dark + auto' },\n    { label: 'Restyle time', value: '< 30 min' },\n  ]}\n/>\n\n### Token-to-component mapping\n\n| Token | Typical usage |\n| --- | --- |\n| `--surface` | Card backgrounds |\n| `--line` | Borders and separators |\n| `--lagoon-deep` | Links and active nav |\n\nKeep the mapping documented and your team will make fewer ad-hoc styling calls.\n\n### Example: deriving UI from semantic tokens\n\n```tsx\nconst button = {\n  color: 'var(--sea-ink)',\n  background: 'var(--surface)',\n  borderColor: 'var(--line)',\n}\n```\n\nMDX is useful here because you can interleave narrative, tables, code blocks,\nand custom JSX components in one authoring surface.",
     "heroImage": "/images/lagoon-5.svg",
     "_meta": {
@@ -20,7 +20,7 @@ export default [
   {
     "title": "Neon Mango Protocol",
     "description": "A quick walkthrough of the starter foundations.",
-    "pubDate": "2024-07-07T23:00:00.000Z",
+    "pubDate": "2024-07-08T00:00:00.000Z",
     "content": "This starter ships with routes, SSR, and a calm visual system out of the box.\n\nStart by editing route files, then layer in add-ons as needed.\n\n## What you get on day one\n\n- Full-document SSR using TanStack Start\n- Type-safe file routing with generated route types\n- A reusable design token system for light and dark themes\n\nThe goal is simple: let teams ship product pages and APIs without spending the\nfirst week wiring framework internals.\n\n### Suggested order of operations\n\n1. Make the home route feel like your product\n2. Add one feature route and one API route\n3. Introduce add-ons only after your core UX is clear\n\n> Keep the first commit boring. Reliable defaults beat clever setup code.\n\n## Baseline delivery checklist\n\nBefore introducing custom infra, confirm these are green:\n\n- `pnpm dev` starts cleanly\n- one server route returns typed data\n- one API route validates input/output\n- one integration test exercises a full page render\n\nWhen these are in place, you can iterate quickly without losing confidence.\n\n### Example request flow\n\n1. Client navigation enters route loader\n2. Loader calls server function\n3. Server function reads data source and returns typed payload\n4. Route component renders immediately with stable shape\n\nThat flow is simple, predictable, and easy to debug.",
     "heroImage": "/images/lagoon-3.svg",
     "_meta": {
@@ -37,7 +37,7 @@ export default [
   {
     "title": "Static Tide Almanac",
     "description": "Dial in layout polish and image rhythm across cards.",
-    "pubDate": "2024-07-28T23:00:00.000Z",
+    "pubDate": "2024-07-29T00:00:00.000Z",
     "content": "As your app grows, visual rhythm matters as much as feature scope.\n\nUse larger feature cards to call attention to primary content, then support with\nsmaller cards for secondary updates.\n\n## Practical layout pattern\n\nUse one featured card followed by standard cards in a responsive grid:\n\n- `lg:col-span-2` for the featured story\n- regular span for supporting posts\n- consistent card media height below `lg`\n\nThat gives you hierarchy without reinventing every breakpoint.\n\n### A quick spacing rule\n\nPair spacing in steps of 4 (`p-4`, `p-8`, `gap-4`, `gap-8`) and only break that\nrule for hero sections.\n\n## Card hierarchy recipe\n\nFor content-heavy indexes, this sequence works well:\n\n1. One featured card with expanded width\n2. Three to six standard cards for breadth\n3. Optional utility card for onboarding links\n\nKeep title sizes mostly consistent and let width + image treatment carry\nhierarchy. That avoids jarring jumps as breakpoints shift.\n\n### Avoiding layout drift\n\nIf cards start to look uneven, check image heights first, then paragraph length.\nConsistency there usually fixes 80% of visual noise.",
     "heroImage": "/images/lagoon-1.svg",
     "_meta": {
@@ -54,7 +54,7 @@ export default [
   {
     "title": "Paper Lantern Cache",
     "description": "How to shape navigation and page structure.",
-    "pubDate": "2024-07-14T23:00:00.000Z",
+    "pubDate": "2024-07-15T00:00:00.000Z",
     "content": "Use file-based routes in `src/routes` to grow the app.\n\nKeep shared UI in `src/components` and tune visual tokens in `src/styles.css`.\n\n## Route design tips\n\nTreat routes like product domains, not technical buckets.\n\n- `routes/settings.*` for account surfaces\n- `routes/billing.*` for payment and plan logic\n- `routes/api.*` for server handlers that belong to the same domain\n\nWhen route trees map to business intent, onboarding gets faster and refactors\nhurt less.\n\n```tsx\n// src/routes/billing.index.tsx\nexport const Route = createFileRoute('/billing/')({\n  component: BillingPage,\n})\n```\n\n<MdxMetrics\n  items={[\n    { label: 'Route setup', value: '~10 min' },\n    { label: 'Type safety', value: 'end-to-end' },\n    { label: 'Refactor risk', value: 'lowered' },\n  ]}\n/>\n\n### Collaboration pattern\n\nUse this lightweight ownership split:\n\n1. Product owns route naming and URL intent\n2. Design owns shared layout primitives and tokens\n3. Engineering owns loaders, actions, and caching\n\nThis pattern keeps URL design, data loading, and UI composition in one place.",
     "heroImage": "/images/lagoon-4.svg",
     "_meta": {
@@ -71,7 +71,7 @@ export default [
   {
     "title": "Midnight Compass Build",
     "description": "Where to customize theme and typography.",
-    "pubDate": "2024-07-21T23:00:00.000Z",
+    "pubDate": "2024-07-22T00:00:00.000Z",
     "content": "Update CSS variables in `src/styles.css` to fit your brand.\n\nThen adjust header and footer links to match your product.\n\n## Theme alignment checklist\n\nBefore adding one-off colors, audit these variables:\n\n- `--sea-ink` and `--sea-ink-soft` for readable body copy\n- `--surface` and `--surface-strong` for cards and shells\n- `--lagoon` / `--lagoon-deep` for links and active UI affordances\n\nIf those are correct, most components will look coherent with zero extra work.\n\n### Accessibility reminder\n\nCheck contrast on at least three surfaces:\n\n1. page background\n2. primary card\n3. muted card\n\nYou can be highly branded and still hit comfortable readability.\n\n## Typography defaults that travel well\n\nUse a high-contrast display face for headlines and a workhorse sans for body\ncopy. Then lock in a spacing scale that keeps article rhythm consistent:\n\n- headings: `mt-10 mb-3`\n- paragraphs: `mb-5`\n- lists: `mb-6`\n\nWith those defaults set, long-form pages stay readable across both themes.\n\n### Practical review loop\n\nWhen you tweak tokens, review these pages in order:\n\n1. Blog detail page (most typography states)\n2. Blog index page (cards + metadata)\n3. Home page (hero and CTA emphasis)",
     "heroImage": "/images/lagoon-2.svg",
     "_meta": {

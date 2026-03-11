@@ -8,8 +8,10 @@
   "scripts": {
     "dev": "vite dev --port 3000",
     "build": "vite build",
-    "preview": "vite preview",
-    "test": "vitest run"
+    "preview": "npm run build && wrangler dev",
+    "test": "vitest run",
+    "deploy": "npm run build && wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.98.0",
@@ -32,6 +34,7 @@
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.27.0",
     "@content-collections/core": "^0.13.1",
     "@content-collections/markdown": "^0.1.4",
     "@content-collections/mdx": "^0.2.2",
@@ -51,6 +54,7 @@
     "vite": "^7.1.7",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.5",
+    "wrangler": "^4.72.0",
     "zod": "^4.3.5"
   }
 }
