@@ -1,5 +1,4 @@
-import { FaXTwitter } from "react-icons/fa6";
-import { FaGithub } from "react-icons/fa";
+import { FaTiktok, FaXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { IoMailOutline } from "react-icons/io5";
 import { FaCreativeCommons } from "react-icons/fa6";
@@ -28,15 +27,17 @@ const FooterReachOut = () => {
               <FaLinkedin />
             </a>
           </li>
-          <li>
-            <a href="https://github.com/dodosebn">
-              <FaGithub />
+         <li>
+              <a href="https://www.tiktok.com/@technicallydominion">
+            <FaTiktok />
             </a>
+
           </li>
           <li>
             <a href="https://x.com/Learning_Dodos"></a>
             <FaXTwitter />
           </li>
+       
         </ul>
       </div>
     </div>
