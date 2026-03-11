@@ -79,7 +79,6 @@ const FormItself = () => {
         onSubmit={handleSubmit}
         className={`${successMessage ? "hidden" : "block"} space-y-2`}
       >
-        {/* Name Input */}
         <div className="flex flex-col">
           <label htmlFor="name" className="text-start">
             Your Name

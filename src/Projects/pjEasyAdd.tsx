@@ -1,6 +1,6 @@
 const pjMaps = [
   {
-    id: 2,
+    id: 1,
     liveUrl: "https://country-details-gray.vercel.app/",
     pjTitle: "Country Detailer",
     pjBio:
@@ -14,7 +14,7 @@ const pjMaps = [
     ],
   },
    {
-    id: 2,
+    id: 0,
     liveUrl: "https://file-converter-rho.vercel.app/",
     pjTitle: "File Converter",
     pjBio:
@@ -28,7 +28,7 @@ const pjMaps = [
     ],
   },
     {
-    id: 4,
+    id: 2,
     liveUrl: "https://mind-bloom.pxxl.click/",
     pjTitle: "Mind Bloom",
     pjBio:
@@ -40,7 +40,7 @@ const pjMaps = [
     ],
   },
   {
-    id: 1,
+    id: 10,
     liveUrl: "https://farmculator.vercel.app/",
     pjTitle: "Farmculator",
     pjBio:

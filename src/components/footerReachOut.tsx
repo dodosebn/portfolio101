@@ -14,7 +14,7 @@ const FooterReachOut = () => {
         <span className="pt-1">
           <FaCreativeCommons />
         </span>{" "}
-        <p>26 Learning_Dodo's</p>
+        <p>26 technicallydominion</p>
       </div>
       <div className="pt-1">
         <ul className="flex gap-2">
