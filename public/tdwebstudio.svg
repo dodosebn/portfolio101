@@ -1,0 +1,44 @@
+<svg width="100%" viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="50%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#facc15"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#facc15"/>
+    </linearGradient>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050e07"/>
+      <stop offset="100%" stop-color="#0a1a0e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Card -->
+  <rect x="215" y="15" width="250" height="170" rx="18" fill="url(#bg)" style="stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Corner brackets -->
+  <path d="M215 33 L215 15 L233 15" fill="none" stroke="url(#g1)" stroke-width="1.5" opacity="0.8" style="fill:none;color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.8;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <path d="M447 15 L465 15 L465 33" fill="none" stroke="url(#g1)" stroke-width="1.5" opacity="0.8" style="fill:none;color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.8;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <path d="M215 167 L215 185 L233 185" fill="none" stroke="url(#g1)" stroke-width="1.5" opacity="0.8" style="fill:none;color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.8;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <path d="M447 185 L465 185 L465 167" fill="none" stroke="url(#g1)" stroke-width="1.5" opacity="0.8" style="fill:none;color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.8;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- TD badge -->
+  <rect x="315" y="32" width="50" height="50" rx="10" fill="none" stroke="url(#g1)" stroke-width="1.2" opacity="0.8" style="fill:none;color:rgb(0, 0, 0);stroke-width:1.2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.8;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <text x="340" y="68" font-family="'Courier New', monospace" font-size="28" font-weight="900" fill="url(#g2)" text-anchor="middle" style="stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:28px;font-weight:900;text-anchor:middle;dominant-baseline:auto">TD</text>
+
+  <!-- Brand name -->
+  <text x="340" y="112" font-family="'Courier New', monospace" font-size="18" font-weight="900" fill="url(#g1)" text-anchor="middle" letter-spacing="3" style="stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:18px;font-weight:900;text-anchor:middle;dominant-baseline:auto">tdwebstudios</text>
+
+  <!-- Divider -->
+  <line x1="265" y1="122" x2="310" y2="122" stroke="#22c55e" stroke-width="0.8" opacity="0.5" style="fill:rgb(0, 0, 0);stroke:rgb(34, 197, 94);color:rgb(0, 0, 0);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="340" cy="122" r="2" fill="url(#g1)" style="stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="370" y1="122" x2="415" y2="122" stroke="#facc15" stroke-width="0.8" opacity="0.5" style="fill:rgb(0, 0, 0);stroke:rgb(250, 204, 21);color:rgb(0, 0, 0);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Tagline -->
+  <text x="340" y="146" font-family="'Courier New', monospace" font-size="8" font-weight="400" fill="#4ade80" text-anchor="middle" letter-spacing="4" opacity="0.85" style="fill:rgb(74, 222, 128);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.85;font-family:&quot;Courier New&quot;, monospace;font-size:8px;font-weight:400;text-anchor:middle;dominant-baseline:auto">TECHNICALLY DOMINION</text>
+
+  <!-- Bottom micro -->
+  <text x="340" y="162" font-family="'Courier New', monospace" font-size="7" fill="#facc15" text-anchor="middle" letter-spacing="2" opacity="0.5" style="fill:rgb(250, 204, 21);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Courier New&quot;, monospace;font-size:7px;font-weight:400;text-anchor:middle;dominant-baseline:auto">build . design . deploy</text>
+</svg>
