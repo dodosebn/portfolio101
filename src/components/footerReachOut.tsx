@@ -28,14 +28,15 @@ const FooterReachOut = () => {
             </a>
           </li>
          <li>
-              <a href="https://www.tiktok.com/@technicallydominion">
+              <a href="https://www.tiktok.com/@tdwebstudio">
             <FaTiktok />
             </a>
 
           </li>
           <li>
-            <a href="https://x.com/Learning_Dodos"></a>
+            <a href="https://x.com/tdwebstudio_">
             <FaXTwitter />
+            </a>
           </li>
        
         </ul>
