@@ -12,6 +12,9 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as OrjiBlogAdminRouteImport } from './routes/orji/blogAdmin'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ApiSendEmailRouteImport } from './routes/api/send-email'
 
 const AdminRoute = AdminRouteImport.update({
@@ -29,6 +32,21 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrjiBlogAdminRoute = OrjiBlogAdminRouteImport.update({
+  id: '/orji/blogAdmin',
+  path: '/orji/blogAdmin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiSendEmailRoute = ApiSendEmailRouteImport.update({
   id: '/api/send-email',
   path: '/api/send-email',
@@ -40,12 +58,18 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/admin': typeof AdminRoute
   '/api/send-email': typeof ApiSendEmailRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/orji/blogAdmin': typeof OrjiBlogAdminRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/admin': typeof AdminRoute
   '/api/send-email': typeof ApiSendEmailRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/orji/blogAdmin': typeof OrjiBlogAdminRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +77,38 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/admin': typeof AdminRoute
   '/api/send-email': typeof ApiSendEmailRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/orji/blogAdmin': typeof OrjiBlogAdminRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/admin' | '/api/send-email'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/api/send-email'
+    | '/blog/$slug'
+    | '/orji/blogAdmin'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/admin' | '/api/send-email'
-  id: '__root__' | '/' | '/about' | '/admin' | '/api/send-email'
+  to:
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/api/send-email'
+    | '/blog/$slug'
+    | '/orji/blogAdmin'
+    | '/blog'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/api/send-email'
+    | '/blog/$slug'
+    | '/orji/blogAdmin'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +116,9 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AdminRoute: typeof AdminRoute
   ApiSendEmailRoute: typeof ApiSendEmailRoute
+  BlogSlugRoute: typeof BlogSlugRoute
+  OrjiBlogAdminRoute: typeof OrjiBlogAdminRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -92,6 +144,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/orji/blogAdmin': {
+      id: '/orji/blogAdmin'
+      path: '/orji/blogAdmin'
+      fullPath: '/orji/blogAdmin'
+      preLoaderRoute: typeof OrjiBlogAdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/send-email': {
       id: '/api/send-email'
       path: '/api/send-email'
@@ -107,6 +180,9 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AdminRoute: AdminRoute,
   ApiSendEmailRoute: ApiSendEmailRoute,
+  BlogSlugRoute: BlogSlugRoute,
+  OrjiBlogAdminRoute: OrjiBlogAdminRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

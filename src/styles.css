@@ -27,8 +27,8 @@
   --background: var(--color-background-dark);
   --foreground: var(--color-foreground-dark);
   --color: var(--color-dark);
-background-image: url('/imgs/lines.svg');
-    background-blend-mode: overlay;
+  background-image: url('/imgs/lines.svg');
+  background-blend-mode: overlay;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -39,16 +39,22 @@ background-image: url('/imgs/lines.svg');
   }
 }
 
+/* Locks the html element to dark before anything paints — kills the white flash */
+html {
+  background-color: #131313;
+}
+
 body {
   color: var(--color);
-  background: var(--background);
+  background-color: var(--background);
+  background-image: url('/imgs/lines.svg');
+  background-blend-mode: overlay;
   font-size: 18px;
   font-family: var(--font-sans);
-  transition-property: opacity, background, transform, filter, color;
+  /* 'background' removed from transition — animating it causes the white hang on load */
+  transition-property: opacity, transform, filter, color;
   transition-timing-function: ease-in-out;
   transition-duration: 500ms;
-background-image: url('/imgs/lines.svg');
-  background-blend-mode: overlay;
 }
 
 .page-transition {
@@ -92,18 +98,16 @@ background-image: url('/imgs/lines.svg');
     animation: gradientAnimation 10s ease infinite;
   }
 
-.experience-list li {
-  margin-bottom: 1rem;        
-  line-height: 1.8;           
-  font-weight: 600;           
-  padding-left: 0.5rem;       
-}
+  .experience-list li {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    font-weight: 600;
+    padding-left: 0.5rem;
+  }
 
-.experience-list {
-  list-style-position: outside; 
-}
-
-
+  .experience-list {
+    list-style-position: outside;
+  }
 
   h1,
   h2,

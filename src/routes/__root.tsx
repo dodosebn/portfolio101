@@ -4,6 +4,7 @@ import appCss from "../styles.css?url";
 import ThemeProvider from "@/components/themeProvider";
 import { Navigations } from "@/components";
 import FooterReachOut from "@/components/footerReachOut";
+import NotFound from "#/components/notfound";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -48,6 +49,7 @@ export const Route = createRootRoute({
     links: [{ rel: "stylesheet", href: appCss }],
   }),
   shellComponent: RootDocument,
+   notFoundComponent: NotFound,
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {

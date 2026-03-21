@@ -1,3 +1,4 @@
 import MainInfoHolder from './mainInfoHolder';
 import Navigations from "./navigations";
-export{Navigations,  MainInfoHolder};
+import TestimonialSection from './testimonailSection';
+export{Navigations,  MainInfoHolder, TestimonialSection};

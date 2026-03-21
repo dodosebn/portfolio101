@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { IoBuild } from "react-icons/io5";
-import { MdOutlineConnectWithoutContact } from "react-icons/md";
+// import { MdOutlineConnectWithoutContact } from "react-icons/md";
 import { BiMenuAltRight, BiX } from "react-icons/bi";
 import Logo from "./utils/logo";
 
-import { FaCode, FaUserAstronaut } from "react-icons/fa6";
+import { UserStar } from 'lucide-react';
+import { Briefcase } from 'lucide-react';
+import { Projector } from 'lucide-react';
+import { NotebookPen } from 'lucide-react';
 
 export const clientOnly = true;
 
@@ -13,10 +15,9 @@ const Navigations = () => {
 
   const NavLinks = [
     // { name: "Home", href: "/", icon: <RiHome5Fill size={20} /> },
-    { name: "About", href: "/#About", icon: <FaUserAstronaut size={20} /> },
-    { name: "Skills", href: "/#Skills", icon: <IoBuild size={20} /> },
-    { name: "Projects", href: "/#Projects", icon: <FaCode size={20} /> },
-    // { name: "Contact", href: "#Contact", icon: <MdOutlineConnectWithoutContact size={20} /> },
+    { name: "Services", href: "/#services", icon: <Briefcase size={20} /> },
+        { name: "Projects", href: "/#Projects", icon: <Projector size={20} /> },
+    { name: "Blog", href: "/blog", icon: < NotebookPen size={20} /> },
   ];
 
   return (
@@ -81,7 +82,7 @@ const Navigations = () => {
      transition-all duration-100 "
           >
             <span className="text-xl">
-              <MdOutlineConnectWithoutContact size={20} />
+              <UserStar size={20} />
             </span>
             <span className="text-lg font-medium">Contact</span>
           </a>
@@ -125,7 +126,7 @@ const Navigations = () => {
      dark:hover:border-gray-700 duration-100 "
               >
                 <span className="text-xl">
-                  <MdOutlineConnectWithoutContact size={20} />
+                  <UserStar size={20} />
                 </span>
                 <span className="text-lg font-medium">Contact</span>
               </a>

@@ -20,9 +20,12 @@ const cardVariants: Variants = {
 export function Projects() {
   return (
     <div className="p-4" id="Projects">
-      <h1 className="dark:text-[#fafafa] text-2xl lg:text-3xl text-center py-7 mx-auto ">
+      <motion.h1  variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }} className="dark:text-[#fafafa] text-2xl lg:text-3xl text-center py-7 mx-auto ">
         Few Collections of My Works🚀
-      </h1>
+      </motion.h1>
       <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {pjMaps.length > 0 ? (
           pjMaps.map((pj, i) => (
