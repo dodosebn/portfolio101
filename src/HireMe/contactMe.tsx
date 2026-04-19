@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import ContactDetails from "./customs/contactMaps";
 import FormItself from "@/components/utils/formItself";
 import { motion } from "framer-motion";

@@ -2,17 +2,13 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import type { BlogPost } from "./blogtype";
 import supabase from "#/lib/supabase";
-// import type { BlogPost } from "./blogTypes";
 
 const containerVariants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.09 } },
 };
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
-};
+
 
 type Props = {
   onSelect: (slug: string) => void;
@@ -52,7 +48,7 @@ const BlogPreview = ({ onSelect }: Props) => {
           </span>
           <span
             className="text-xs font-mono tracking-widest uppercase font-semibold
-                       bg-gradient-to-r from-green-500 via-green-400 to-yellow-400
+                       bg-linear-to-r from-green-500 via-green-400 to-yellow-400
                        dark:from-green-400 dark:via-green-500 dark:to-yellow-500
                        bg-clip-text text-transparent"
           >
@@ -93,7 +89,6 @@ const BlogPreview = ({ onSelect }: Props) => {
           {posts.map((post) => (
             <motion.article
               key={post.id}
-              variants={cardVariants}
               onClick={() => onSelect(post.slug)}
               className="group rounded-xl border border-white/10 bg-white/5
                          hover:border-white/25 hover:bg-white/8
@@ -109,7 +104,7 @@ const BlogPreview = ({ onSelect }: Props) => {
                   />
                 </div>
               ) : (
-                <div className="h-44 bg-gradient-to-br from-white/5 to-white/10 flex items-center justify-center">
+                <div className="h-44 bg-linear-to-br from-white/5 to-white/10 flex items-center justify-center">
                   <span className="text-4xl text-white/10 font-bold select-none">
                     {post.title.charAt(0)}
                   </span>

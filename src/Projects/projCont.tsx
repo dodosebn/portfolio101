@@ -41,7 +41,6 @@ const PjCont: React.FC<pjProps> = ({
     </p>
   </div>
 
-  {/* View Project Button */}
   <div className="flex gap-3 pt-2">
     <button className="dark:text-white text-black px-4 py-2 rounded-lg flex items-center
      gap-2 transition-all duration-300 

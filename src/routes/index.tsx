@@ -12,6 +12,7 @@ function App() {
     <>
     <div  className="relative lg:px-16 lg:w-full max-w-375 flex flex-col 
       justify-center mx-auto">
+       
   <Hero />
   <Home/>
   <QuickAnimaB4Pj />
