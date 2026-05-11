@@ -7,7 +7,7 @@ const Hero = () => {
       <button className="flex items-center bg-[#e1f9dc]
        text-[#26803d] ring-1 ring-[#26803d] rounded-full px-4 py-2 space-x-2">
   <span className="w-2 h-2 bg-[#26803d] rounded-full"></span>
-  <span className="text-[16px]">Open to work</span>
+  <span className="text-[16px]"><a href='#Contact'> Open to work</a></span>
 </button>
 </div>
     </div>
