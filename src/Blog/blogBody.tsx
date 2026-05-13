@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import supabase from "#/lib/supabase";
 import type { BlogPost } from "./blogtype";
+
+import { ClapButton, CommentsSection } from "./custom";
 type Props = {
   slug: string;
   onBack: () => void;
@@ -41,7 +43,10 @@ const BlogBody = ({ slug, onBack }: Props) => {
     return (
       <div className="py-20 text-center">
         <p className="text-gray-500 mb-4">Post not found.</p>
-        <button onClick={onBack} className="text-sm text-white underline underline-offset-4">
+        <button
+          onClick={onBack}
+          className="text-sm text-white underline underline-offset-4"
+        >
           ← Back to blog
         </button>
       </div>
@@ -55,17 +60,17 @@ const BlogBody = ({ slug, onBack }: Props) => {
       transition={{ duration: 0.45, ease: "easeOut" }}
       className="py-14 px-4 max-w-2xl mx-auto"
     >
-      {/* Back */}
       <button
         onClick={onBack}
         className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-white
                    transition-colors mb-8 group"
       >
-        <span className="group-hover:-translate-x-0.5 transition-transform">←</span>
+        <span className="group-hover:-translate-x-0.5 transition-transform">
+          ←
+        </span>
         Back to blog
       </button>
 
-      {/* Tags */}
       {post.tags.length > 0 && (
         <div className="flex flex-wrap gap-2 mb-4">
           {post.tags.map((tag) => (
@@ -79,23 +84,22 @@ const BlogBody = ({ slug, onBack }: Props) => {
         </div>
       )}
 
-      {/* Title */}
       <h1 className="text-3xl lg:text-4xl font-bold text-white leading-tight tracking-tight mb-4">
         {post.title}
       </h1>
 
-      {/* Meta */}
       <div className="flex items-center gap-2 text-xs text-gray-500 mb-8">
         <span>
           {new Date(post.created_at).toLocaleDateString("en-GB", {
-            day: "numeric", month: "long", year: "numeric",
+            day: "numeric",
+            month: "long",
+            year: "numeric",
           })}
         </span>
         <span>·</span>
         <span>{post.read_time} min read</span>
       </div>
 
-      {/* Cover image */}
       {post.cover_image && (
         <div className="mb-10 rounded-2xl overflow-hidden border border-white/10">
           <img
@@ -106,7 +110,6 @@ const BlogBody = ({ slug, onBack }: Props) => {
         </div>
       )}
 
-      {/* Content */}
       <div
         className="prose prose-invert prose-sm max-w-none
                    prose-headings:font-bold prose-headings:tracking-tight
@@ -121,20 +124,30 @@ const BlogBody = ({ slug, onBack }: Props) => {
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
 
-      {/* Footer */}
-      <div className="mt-14 pt-6 border-t border-white/10 flex items-center justify-between">
+      {/* ── Clap + footer row ── */}
+      <div className="mt-10 pt-6 border-t border-white/10 flex items-center justify-between">
+        <ClapButton postId={post.id} />
+        <span className="text-xs text-gray-600">
+          Last updated{" "}
+          {new Date(post.updated_at).toLocaleDateString("en-GB", {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+          })}
+        </span>
+      </div>
+
+      {/* ── Comments ── */}
+      <CommentsSection postId={post.id} />
+
+      {/* ── Bottom back button ── */}
+      <div className="mt-10 pt-6 border-t border-white/10">
         <button
           onClick={onBack}
           className="text-sm text-gray-500 hover:text-white transition-colors"
         >
           ← Back to blog
         </button>
-        <span className="text-xs text-gray-600">
-          Last updated{" "}
-          {new Date(post.updated_at).toLocaleDateString("en-GB", {
-            day: "numeric", month: "short", year: "numeric",
-          })}
-        </span>
       </div>
     </motion.article>
   );
