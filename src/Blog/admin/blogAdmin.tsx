@@ -7,7 +7,6 @@ import Placeholder from "@tiptap/extension-placeholder";
 import { supabaseAdmin } from "#/lib/supabase";
 import type { BlogPost, BlogPostInsert } from "../blogtype";
 
-// ── helpers ──────────────────────────────────────────────────────────────────
 
 const slugify = (str: string) =>
   str
@@ -22,7 +21,6 @@ const calcReadTime = (html: string) => {
   return Math.max(1, Math.ceil(words / 200));
 };
 
-// ── Toolbar ───────────────────────────────────────────────────────────────────
 
 const ToolbarBtn = ({
   onClick,
@@ -49,14 +47,12 @@ const ToolbarBtn = ({
   </button>
 );
 
-// ── Main Component ────────────────────────────────────────────────────────────
 
 const BlogAdmin = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [editing, setEditing] = useState<BlogPost | null>(null);
   const [isNew, setIsNew] = useState(false);
 
-  // form state
   const [title, setTitle] = useState("");
   const [slug, setSlug] = useState("");
   const [excerpt, setExcerpt] = useState("");
@@ -82,7 +78,6 @@ const BlogAdmin = () => {
     },
   });
 
-  // ── data ──
 
   const fetchPosts = async () => {
     const { data } = await supabaseAdmin
@@ -94,7 +89,6 @@ const BlogAdmin = () => {
 
   useEffect(() => { fetchPosts(); }, []);
 
-  // ── form helpers ──
 
   const resetForm = () => {
     setTitle(""); setSlug(""); setExcerpt(""); setCoverImage("");
@@ -118,7 +112,6 @@ const BlogAdmin = () => {
     if (!editing && title && !slug) setSlug(slugify(title));
   };
 
-  // ── cover image upload ──
 
   const handleCoverUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -136,7 +129,6 @@ const BlogAdmin = () => {
     setUploading(false);
   };
 
-  // ── save ──
 
   const handleSave = async () => {
     if (!title.trim() || !editor) return;
@@ -166,7 +158,6 @@ const BlogAdmin = () => {
     fetchPosts();
   };
 
-  // ── delete ──
 
   const handleDelete = async (id: string) => {
     if (!confirm("Delete this post?")) return;
@@ -175,7 +166,6 @@ const BlogAdmin = () => {
     if (editing?.id === id) resetForm();
   };
 
-  // ── toggle publish ──
 
   const togglePublish = async (post: BlogPost) => {
     await supabaseAdmin
@@ -185,7 +175,6 @@ const BlogAdmin = () => {
     fetchPosts();
   };
 
-  // ── render ────────────────────────────────────────────────────────────────
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white font-sans p-6">
@@ -203,7 +192,6 @@ const BlogAdmin = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* ── Post list ── */}
           <aside className="lg:col-span-1 space-y-2">
             {posts.length === 0 && (
               <p className="text-gray-500 text-sm">No posts yet.</p>
@@ -266,7 +254,6 @@ const BlogAdmin = () => {
                 </button>
               </div>
 
-              {/* Title */}
               <input
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}

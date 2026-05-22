@@ -280,7 +280,7 @@ const CommentsSection = ({ postId }: Props) => {
             No comments yet — be the first.
           </p>
         )}
-
+npm i @supabase/supabase-js
         <AnimatePresence>
           {comments.map((c) => (
             <CommentItem

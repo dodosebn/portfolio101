@@ -33,7 +33,6 @@ const BlogPreview = ({ onSelect }: Props) => {
 
   return (
     <section id="blog" className="py-14 px-4">
-      {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +62,6 @@ const BlogPreview = ({ onSelect }: Props) => {
         </p>
       </motion.div>
 
-      {/* Loading */}
       {loading && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[...Array(3)].map((_, i) => (
@@ -72,12 +70,10 @@ const BlogPreview = ({ onSelect }: Props) => {
         </div>
       )}
 
-      {/* Empty */}
       {!loading && posts.length === 0 && (
         <p className="text-gray-500 text-sm">No posts yet — check back soon.</p>
       )}
 
-      {/* Grid */}
       {!loading && posts.length > 0 && (
         <motion.div
           variants={containerVariants}
@@ -94,7 +90,6 @@ const BlogPreview = ({ onSelect }: Props) => {
                          hover:border-white/25 hover:bg-white/8
                          transition-colors duration-200 cursor-pointer overflow-hidden"
             >
-              {/* Cover */}
               {post.cover_image ? (
                 <div className="h-44 overflow-hidden">
                   <img
@@ -111,9 +106,7 @@ const BlogPreview = ({ onSelect }: Props) => {
                 </div>
               )}
 
-              {/* Body */}
               <div className="p-4">
-                {/* Tags */}
                 {post.tags.length > 0 && (
                   <div className="flex flex-wrap gap-1.5 mb-2">
                     {post.tags.slice(0, 3).map((tag) => (
