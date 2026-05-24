@@ -13,31 +13,31 @@ const pjMaps = [
       "Framer Motion",
     ],
   },
-   {
+    {
+    id: 11,
+    liveUrl: "https://blue-tickers.myshopify.com/",
+    pjTitle: "Blue-Tickers",
+    pjBio:
+      "Built a fully functional and professionally structured ecommerce platform for Blue Tickers, optimized product organization, responsive design, and high-conversion storefront functionality.",  
+        pjStacks: [
+ "Shopify",
+    ],
+  },
+  {
     id: 0,
     liveUrl: "https://file-converter-rho.vercel.app/",
     pjTitle: "File Converter",
     pjBio:
       "The Most secured file converter. Transform images, documents, and media files with just a few clicks. No software installation required.",
-    pjStacks: [
-      "React",
-      "Tailwind",
-      "Express",
-      "Docker",
-      "LibreOffice",
-    ],
+    pjStacks: ["React", "Tailwind", "Express", "Docker", "LibreOffice"],
   },
-    {
+  {
     id: 2,
     liveUrl: "https://mind-bloom.pxxl.click/",
     pjTitle: "Mind Bloom",
     pjBio:
       "A gentle companion for young hearts learning to understand their feelings. Here, every emotion is valid, every thought matters, and you're never alone",
-    pjStacks: [
-      "Html",
-      "Css",
-      "Javascript"
-    ],
+    pjStacks: ["Html", "Css", "Javascript"],
   },
   {
     id: 10,
@@ -88,11 +88,11 @@ const pjMaps = [
   },
   {
     id: 7,
-    liveUrl: "https://iic-wena-p.vercel.app/",
-    pjTitle: "Wena Portfolio",
+    liveUrl: "https://citi-bankkz.vercel.app/",
+    pjTitle: "Citi-Bank",
     pjBio:
       "A clean and modern agency portfolio showcasing services, completed projects, brand identity, and featured highlights for potential clients and partners.",
-    pjStacks: ["Next.js", "Tailwind", "TypeScript"],
+    pjStacks: ["Next.js", "Tailwind", "TypeScript", "Supabase"],
   },
   {
     id: 9,

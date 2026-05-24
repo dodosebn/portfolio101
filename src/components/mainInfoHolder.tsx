@@ -54,11 +54,10 @@ const MainInfoHolder = () => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    // Simulate assets ready — fires after first paint + image load
     const img = new Image();
-    img.src = "/imgs/dominion.jpeg";
+    img.src = "/imgs/dominion.webp";
     img.onload = () => setLoaded(true);
-    img.onerror = () => setLoaded(true); // still show content if image fails
+    img.onerror = () => setLoaded(true); 
   }, []);
 
   const convetionContents: Array<{ h3content: string; pcontent: string; variant: 'green' | 'gold' }> = [
@@ -90,7 +89,7 @@ const MainInfoHolder = () => {
         <section className="px-5 md:flex-1">
           <div>
             <img
-              src="/imgs/dominion.jpeg"
+              src="/imgs/dominion.webp"
               alt="Dominion"
               className="cursor-pointer shadow-lg w-20 h-20 rounded-full object-cover"
               onClick={() => setIsOpen(true)}
@@ -114,7 +113,7 @@ const MainInfoHolder = () => {
             </div>
           </div>
           <p className="text-start leading-8">
-            I build scalable web applications for businesses, combining software
+            I Create & fix scalable web/mobile applications for businesses, combining software
             engineering with a strong foundation in{" "}
             <span className="italic font-bold bg-linear-to-r from-[#FFD700] via-[#FFA500] to-[#FF8C00] bg-clip-text text-transparent">
               Statistics
