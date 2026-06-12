@@ -60,6 +60,22 @@ const BlogBody = ({ slug, onBack }: Props) => {
       transition={{ duration: 0.45, ease: "easeOut" }}
       className="py-14 px-4 max-w-2xl mx-auto"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: post.title,
+            datePublished: post.created_at,
+            dateModified: post.updated_at,
+            image: post.cover_image,
+            description: post.excerpt,
+            author: { '@type': 'Person', name: 'Orji Dominion' },
+          }),
+        }}
+      />
+
       <button
         onClick={onBack}
         className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-white
