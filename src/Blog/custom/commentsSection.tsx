@@ -117,7 +117,6 @@ const ComposeBox = ({
   );
 };
 
-/* ── Single comment (recursive for replies) ── */
 const CommentItem = ({
   comment,
   postId,
@@ -160,7 +159,7 @@ const CommentItem = ({
               {relativeTime(comment.created_at)}
             </span>
           </div>
-          <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-wrap break-words">
+          <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-wrap wrap-break-word">
             {comment.body}
           </p>
           {depth === 0 && (
@@ -280,7 +279,6 @@ const CommentsSection = ({ postId }: Props) => {
             No comments yet — be the first.
           </p>
         )}
-npm i @supabase/supabase-js
         <AnimatePresence>
           {comments.map((c) => (
             <CommentItem
