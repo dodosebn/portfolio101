@@ -13,16 +13,6 @@ const pjMaps = [
       "Framer Motion",
     ],
   },
-    {
-    id: 11,
-    liveUrl: "https://blue-tickers.myshopify.com/",
-    pjTitle: "Blue-Tickers",
-    pjBio:
-      "Built a fully functional and professionally structured ecommerce platform for Blue Tickers, optimized product organization, responsive design, and high-conversion storefront functionality.",  
-        pjStacks: [
- "Shopify",
-    ],
-  },
   {
     id: 0,
     liveUrl: "https://file-converter-rho.vercel.app/",
